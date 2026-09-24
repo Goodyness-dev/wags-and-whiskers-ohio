@@ -20,9 +20,9 @@ export default function MeetLacie({ onOpenWizard }) {
             <div className="card-bezel group">
               <div className="card-bezel-inner p-2 aspect-4/5 overflow-hidden">
                 <img
-                  src="/images/lacie-attendant.jpg"
-                  alt="Lacie Kern caring for dogs in Central Ohio"
-                  className="w-full h-full object-cover object-top rounded-[calc(2rem-0.75rem)] group-hover:scale-103 transition-transform duration-700"
+                  src="/images/lacie-with-puppy.jpg"
+                  alt="Lacie Kern cuddled with a happy puppy"
+                  className="w-full h-full object-cover object-center rounded-[calc(2rem-0.75rem)] group-hover:scale-103 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>

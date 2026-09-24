@@ -1,41 +1,41 @@
-﻿/**
+/**
  * Image Manifest for Wags and Whiskers (Central Ohio Wedding Pet Attendant)
  */
 
 export const IMAGES = {
   hero: {
-    src: '/images/hero-wedding-dog.jpg',
-    alt: 'Happy dog adorned in wedding greenery standing proudly at outdoor wedding ceremony in Ohio',
-    credit: 'Unsplash Editorial Curation'
+    src: '/images/hero-dog-shepherd.jpg',
+    alt: 'Majestic German Shepherd companion cared for by Wags and Whiskers in Central Ohio',
+    credit: 'Wags & Whiskers Authentic Client Photo'
   },
   attendant: {
-    src: '/images/lacie-attendant.jpg',
-    alt: 'Lacie Kern, attentive pet attendant caring for happy dogs outdoors',
-    credit: 'Unsplash Editorial Curation'
+    src: '/images/lacie-with-puppy.jpg',
+    alt: 'Lacie Kern, loving founder of Wags and Whiskers cuddling a happy puppy',
+    credit: 'Wags & Whiskers Authentic Founder Photo'
   },
   aisle: {
-    src: '/images/aisle-escort.jpg',
-    alt: 'Ring bearer dog walking down wedding aisle with joyful composure',
-    credit: 'Unsplash Editorial Curation'
+    src: '/images/white-doodle-lawn.jpg',
+    alt: 'White doodle standing proudly on lush Ohio venue lawn',
+    credit: 'Wags & Whiskers Authentic Client Photo'
   },
   photoAssistant: {
-    src: '/images/wedding-photo-assistant.jpg',
-    alt: 'Pet posing calmly for formal wedding portraits with bride and groom',
-    credit: 'Unsplash Editorial Curation'
+    src: '/images/smiling-heeler.jpg',
+    alt: 'Smiling Australian Cattle Dog posing attentively for the camera',
+    credit: 'Wags & Whiskers Authentic Client Photo'
   },
   cocktailHour: {
-    src: '/images/cocktail-hour-dog.jpg',
-    alt: 'Dog greeting wedding guests warmly during outdoor cocktail hour',
-    credit: 'Unsplash Editorial Curation'
+    src: '/images/happy-schnauzer.jpg',
+    alt: 'Happy smiling schnauzer greeting wedding guests',
+    credit: 'Wags & Whiskers Authentic Client Photo'
   },
   safeRideHome: {
-    src: '/images/safe-ride-home.jpg',
-    alt: 'Tired, content pup relaxing in car on the safe ride home after the reception',
-    credit: 'Unsplash Editorial Curation'
+    src: '/images/black-retriever-home.jpg',
+    alt: 'Relaxed black retriever resting comfortably at home after celebration',
+    credit: 'Wags & Whiskers Authentic Client Photo'
   },
   dailyCare: {
-    src: '/images/daily-care-visit.jpg',
-    alt: 'Gentle in-home routine pet visit and companionship in Central Ohio',
-    credit: 'Unsplash Editorial Curation'
+    src: '/images/calico-cat-home.jpg',
+    alt: 'Fluffy calico cat receiving gentle in-home care in Central Ohio',
+    credit: 'Wags & Whiskers Authentic Client Photo'
   }
 };

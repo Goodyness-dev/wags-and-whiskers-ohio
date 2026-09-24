@@ -9,7 +9,7 @@ export default function WeddingDayStory({ onOpenWizard }) {
       phase: 'Scene 01 — Getting Ready',
       headline: 'SOMEONE HAS A WEDDING TO ATTEND.',
       copy: 'We arrive at the bridal suite, settle them in calmly, handle breakfast, hydration, custom accessories, and burn off pre-wedding jitters.',
-      image: '/images/dog-floral-collar.jpg',
+      image: '/images/blonde-pup-portrait.jpg',
       tag: 'Pre-Ceremony Prep'
     },
     {
@@ -17,7 +17,7 @@ export default function WeddingDayStory({ onOpenWizard }) {
       phase: 'Scene 02 — The Entrance',
       headline: 'TIME TO WALK THE AISLE.',
       copy: 'We handle timing, leash control, ring bearer positioning, and reassuring guidance so your pup walks the aisle without a single distraction or jump.',
-      image: '/images/aisle-escort.jpg',
+      image: '/images/white-doodle-lawn.jpg',
       tag: 'The Vows'
     },
     {
@@ -25,7 +25,7 @@ export default function WeddingDayStory({ onOpenWizard }) {
       phase: 'Scene 03 — Portraits',
       headline: 'PICTURE PERFECT.',
       copy: 'Standing right behind your photographer with sound makers, squeakers, and high-value treats to create joyful, camera-focused smiles.',
-      image: '/images/wedding-photo-assistant.jpg',
+      image: '/images/smiling-heeler.jpg',
       tag: 'Formal Portraits'
     },
     {
@@ -33,7 +33,7 @@ export default function WeddingDayStory({ onOpenWizard }) {
       phase: 'Scene 04 — Cocktail Hour',
       headline: 'PARTY TIME.',
       copy: 'Supervised lawn mingling, guest hugs, hydration, and clean paws so your friends get to celebrate your pet without messy dresses.',
-      image: '/images/cocktail-hour-dog.jpg',
+      image: '/images/happy-schnauzer.jpg',
       tag: 'Social Hour'
     },
     {
@@ -41,7 +41,7 @@ export default function WeddingDayStory({ onOpenWizard }) {
       phase: 'Scene 05 — Safe Ride Home',
       headline: 'YOUR GUESTS KEEP CELEBRATING.',
       copy: 'Chauffeured pet taxi ride in a climate-controlled vehicle directly to your home or hotel room while your family stays on the dance floor.',
-      image: '/images/safe-ride-home.jpg',
+      image: '/images/black-retriever-home.jpg',
       tag: 'Chauffeured Taxi'
     },
     {
@@ -49,7 +49,7 @@ export default function WeddingDayStory({ onOpenWizard }) {
       phase: 'Scene 06 — Goodnight',
       headline: 'HOME SAFE & SOUND.',
       copy: 'Dinner served, bedtime walk, scheduled medication administered, and photo confirmation sent to your phone while you dance.',
-      image: '/images/daily-care-visit.jpg',
+      image: '/images/white-lab-relaxing.jpg',
       tag: 'Bedtime Routine'
     }
   ];

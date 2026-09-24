@@ -5,39 +5,39 @@ export default function AmenitiesSection() {
 
   const photos = [
     {
-      src: '/images/hero-wedding-dog.jpg',
+      src: '/images/white-doodle-lawn.jpg',
       title: 'The Ceremony Escort',
-      caption: 'Golden Retriever ring bearer awaiting the processional vows at The Estate at New Albany.',
+      caption: 'Joyful doodle poised on the venue lawn, perfectly paced for the wedding processional.',
       span: 'lg:col-span-8 aspect-16/10'
     },
     {
-      src: '/images/dog-floral-collar.jpg',
-      title: 'Floral Collar Details',
-      caption: 'Handcrafted eucalyptus and blush garden rose collar safely fitted before morning photos.',
+      src: '/images/blonde-pup-portrait.jpg',
+      title: 'Pre-Ceremony Pampering',
+      caption: 'Clean, brushed, and relaxed on the sunny terrace before wedding-party photos begin.',
       span: 'lg:col-span-4 aspect-4/5'
     },
     {
-      src: '/images/wedding-photo-assistant.jpg',
-      title: 'Portrait Focus Co-Pilot',
-      caption: 'Eye-level squeakers and reward treats creating alert, joyful wedding portraits.',
-      span: 'lg:col-span-4 aspect-square'
-    },
-    {
-      src: '/images/aisle-escort.jpg',
-      title: 'Down The Aisle',
-      caption: 'Flawless pacing down the runner with zero leash tugging or guest jumping.',
-      span: 'lg:col-span-4 aspect-square'
-    },
-    {
-      src: '/images/cocktail-hour-dog.jpg',
+      src: '/images/happy-schnauzer.jpg',
       title: 'Cocktail Hour Greeter',
-      caption: 'Gentle guest hugs and supervised lawn socializing during cocktail hour.',
+      caption: 'Big smiles and calm greetings with wedding guests during the garden cocktail hour.',
       span: 'lg:col-span-4 aspect-square'
     },
     {
-      src: '/images/safe-ride-home.jpg',
-      title: 'Chauffeured Safe Ride',
-      caption: 'Air-conditioned pet taxi departing venue so the bride and groom can dance all night.',
+      src: '/images/calico-cat-home.jpg',
+      title: 'In-Home Whiskers Care',
+      caption: 'Fluffy calico receiving loving daily visits, fresh water, and companionship while family celebrates.',
+      span: 'lg:col-span-4 aspect-square'
+    },
+    {
+      src: '/images/smiling-heeler.jpg',
+      title: 'Portrait Focus Co-Pilot',
+      caption: 'Attentive cues, squeakers, and praise creating razor-sharp portraits with the bride & groom.',
+      span: 'lg:col-span-4 aspect-square'
+    },
+    {
+      src: '/images/white-lab-relaxing.jpg',
+      title: 'Post-Vows Relaxation',
+      caption: 'Calm, contented pup resting peacefully after a memorable day standing with family.',
       span: 'lg:col-span-12 aspect-21/9'
     }
   ];

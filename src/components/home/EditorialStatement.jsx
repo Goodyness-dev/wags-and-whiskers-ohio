@@ -32,8 +32,8 @@ export default function EditorialStatement() {
             <div className="card-bezel group">
               <div className="card-bezel-inner p-2 overflow-hidden aspect-3/4">
                 <img
-                  src="/images/bride-dog-portrait.jpg"
-                  alt="Bride and dog quiet moment before ceremony"
+                  src="/images/puppy-kisses-lacie.jpg"
+                  alt="Pure joy and love between pet and caregiver"
                   className="w-full h-full object-cover rounded-[calc(2rem-0.75rem)] group-hover:scale-105 transition-transform duration-700 filter brightness-95"
                   loading="lazy"
                 />

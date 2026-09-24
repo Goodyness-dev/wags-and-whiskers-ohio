@@ -31,14 +31,15 @@ export default function Hero({ onOpenWizard }) {
       {/* Cinematic Full-Bleed Editorial Background with Soft Film Tone */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
-          src="/images/greenhouse-wedding.jpg"
-          alt="Luxury botanical estate wedding ceremony with pet"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.72] contrast-[1.05]"
+          src="/images/hero-dog-shepherd.jpg"
+          alt="Majestic companion cared for by Wags and Whiskers"
+          className="w-full h-full object-cover object-[center_25%] filter brightness-[0.78] contrast-[1.05]"
           fetchpriority="high"
           loading="eager"
         />
         {/* Editorial Atmospheric Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#11110E] via-black/40 to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#11110E] via-black/30 to-black/25 pointer-events-none" />
       </div>
 
       {/* Top Micro Eyebrow */}

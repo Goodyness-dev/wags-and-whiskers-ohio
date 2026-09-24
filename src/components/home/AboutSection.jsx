@@ -65,8 +65,8 @@ export default function AboutSection({ onOpenWizard }) {
               
               <div className="rounded-3xl overflow-hidden border border-[#E2EAE4] dark:border-[#1E382D] shadow-wedding bg-white dark:bg-[#14251E] p-3">
                 <img
-                  src="/images/wedding-dog-centerpiece.jpg"
-                  alt="Happy wedding dog companion in Central Ohio"
+                  src="/images/blonde-pup-portrait.jpg"
+                  alt="Beloved wedding dog companion in Central Ohio"
                   className="w-full h-[380px] sm:h-[440px] object-cover rounded-2xl group-hover:scale-102 transition duration-500"
                   loading="lazy"
                 />

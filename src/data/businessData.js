@@ -68,7 +68,7 @@ export const BUSINESS_INFO = {
       venue: "The Estate at New Albany",
       rating: 5,
       date: "Spring Wedding",
-      image: "/images/bride-dog-portrait.jpg",
+      image: "/images/white-doodle-lawn.jpg",
       quote: "Having Lacie at our wedding was genuinely the best decision we made! Our Golden Retriever Murphy walked down the aisle as our ring bearer, posed patiently for photos, and was tucked in asleep at home before dinner."
     },
     {
@@ -78,7 +78,7 @@ export const BUSINESS_INFO = {
       venue: "Franklin Park Conservatory",
       rating: 5,
       date: "Garden Ceremony",
-      image: "/images/wedding-dog-centerpiece.jpg",
+      image: "/images/gentle-dog-pat.jpg",
       quote: "We couldn't imagine our wedding without Bailey, but didn't want our bridesmaids stuck babysitting. Lacie was calm, loving, and completely took charge with treats and squeakers. 10/10 recommend to every Ohio bride!"
     }
   ],
@@ -88,7 +88,7 @@ export const BUSINESS_INFO = {
       title: "Top 7 Dog-Friendly Wedding Venues in Central Ohio",
       category: "Venue Guide",
       readTime: "4 min read",
-      image: "/images/greenhouse-wedding.jpg",
+      image: "/images/hero-dog-shepherd.jpg",
       excerpt: "From Franklin Park Conservatory to Jorgensen Farms, discover the premier Central Ohio venues that welcome pets with open arms."
     },
     {
@@ -96,7 +96,7 @@ export const BUSINESS_INFO = {
       title: "How to Train Your Dog to Walk the Aisle Like a Pro",
       category: "Aisle Training",
       readTime: "3 min read",
-      image: "/images/aisle-escort.jpg",
+      image: "/images/white-doodle-lawn.jpg",
       excerpt: "Desensitization, practice runs, and how positive reinforcement prevents aisle jumping or distraction during your vows."
     },
     {
@@ -104,7 +104,7 @@ export const BUSINESS_INFO = {
       title: "Photo Session Secrets: Squeakers, High-Value Treats & Eye Contact",
       category: "Photo Tips",
       readTime: "5 min read",
-      image: "/images/wedding-photo-assistant.jpg",
+      image: "/images/smiling-heeler.jpg",
       excerpt: "The exact behind-the-lens techniques our attendants use to capture joyful, alert portrait smiles with your wedding photographer."
     },
     {
@@ -112,7 +112,7 @@ export const BUSINESS_INFO = {
       title: "Post-Ceremony Tuck-In: Why Chauffeured Transport is Essential",
       category: "Wedding Logistics",
       readTime: "3 min read",
-      image: "/images/safe-ride-home.jpg",
+      image: "/images/black-retriever-home.jpg",
       excerpt: "Why asking a parent or groomsman to drive your dog home during cocktail hour ruins the party—and how our pet taxi solves it."
     }
   ],

@@ -6,9 +6,9 @@ export default function ReviewsSection({ onOpenWizard }) {
     {
       couple: 'SARAH + MURPHY',
       venue: 'THE ESTATE AT NEW ALBANY',
-      role: 'Golden Retriever Ring Bearer Dog',
-      quote: 'Having Lacie there was genuinely one of the best decisions we made for our wedding. Our Golden Retriever Murphy walked down the aisle perfectly, posed like a model for portraits, and was tucked in asleep at our home before dinner was served.',
-      image: '/images/bride-dog-portrait.jpg',
+      role: 'Golden Doodle Ring Bearer Dog',
+      quote: 'Having Lacie there was genuinely one of the best decisions we made for our wedding. Our pup Murphy walked down the aisle perfectly, posed like a model for portraits, and was tucked in asleep at our home before dinner was served.',
+      image: '/images/white-doodle-lawn.jpg',
       date: 'Spring 2026 Celebration'
     },
     {
@@ -16,7 +16,7 @@ export default function ReviewsSection({ onOpenWizard }) {
       venue: 'FRANKLIN PARK CONSERVATORY',
       role: 'Rescue Pup Cocktail Greeter',
       quote: 'We couldn’t imagine getting married without Bailey, but didn’t want our bridesmaids or parents stuck babysitting. Lacie was calm, loving, and completely in control. 10/10 recommend to every Central Ohio bride.',
-      image: '/images/wedding-dog-centerpiece.jpg',
+      image: '/images/gentle-dog-pat.jpg',
       date: 'Garden Conservatory Ceremony'
     }
   ];
