@@ -1,155 +1,185 @@
 import React, { useState } from 'react';
-import { SERVICES, SERVICE_CATEGORIES } from '../../data/servicesData';
-import { BUSINESS_INFO } from '../../data/businessData';
 
-export default function ServicesSection({ onOpenWizard, onNavigate }) {
-  const [activeCategory, setActiveCategory] = useState('All Packages');
+export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
+  const [selectedRange, setSelectedRange] = useState('full'); // 'ceremony' | 'full' | 'weekend'
 
-  const filteredServices = activeCategory === 'All Packages'
-    ? SERVICES
-    : SERVICES.filter(s => s.category === activeCategory);
+  const packages = [
+    {
+      id: 'the-aisle',
+      tier: '01',
+      title: 'THE AISLE',
+      subtitle: 'Ceremony & Formal Portraits',
+      duration: '2.5 – 3 Hours on Venue Site',
+      price: 'From $299',
+      promo: '$50 Credit Applicable',
+      isSignature: false,
+      description: 'Our focused ceremony service. Your pup gets dressed, walks down the aisle as your ring bearer, poses for photos, and is safely handed off or transported home.',
+      inclusions: [
+        'Pre-ceremony styling (floral wreath, bowtie, or bandana)',
+        'Aisle escort & ring bearer dog management',
+        'Continuous ceremony supervision & hydration',
+        'Photographer co-pilot (squeakers & high-value treats)',
+        'Safe handoff or chauffeured ride home'
+      ],
+      cta: 'EXPLORE THE AISLE →'
+    },
+    {
+      id: 'the-day',
+      tier: '02 · SIGNATURE EXPERIENCE',
+      title: 'THE DAY',
+      subtitle: 'Full Wedding Day Concierge',
+      duration: '6 – 8 Hours Comprehensive Care',
+      price: 'From $599',
+      promo: '$50 Credit Applicable',
+      isSignature: true,
+      description: 'Complete hands-off luxury from morning bridal suite candid photos through vows, formal portrait sessions, cocktail hour mingling, and evening bedtime tuck-in.',
+      inclusions: [
+        'Bridal suite / groom prep candid companion',
+        'Pre-ceremony stroll & calming brush-out',
+        'Ceremony escort & ring bearer handling',
+        'Cocktail hour meet-and-greets & guest supervision',
+        'Chauffeured ride home + dinner service & bedtime walk',
+        'Continuous photo/video updates sent to your phone'
+      ],
+      cta: 'EXPLORE THE FULL DAY →'
+    },
+    {
+      id: 'the-weekend',
+      tier: '03',
+      title: 'THE WEEKEND',
+      subtitle: 'Rehearsal + Wedding Weekend',
+      duration: 'Multi-Day Extended Care',
+      price: 'Custom Quote',
+      promo: 'Weekend Concierge',
+      isSignature: false,
+      description: 'Total peace of mind for you and out-of-town guests. Rehearsal practice walk-through, full wedding day care, and next-morning breakfast check-ins.',
+      inclusions: [
+        'Venue rehearsal walk-through practice with your pet',
+        'Full Wedding Day VIP Attendant service',
+        'Scheduled medication & custom dietary routines',
+        'Late-night tuck-in at your home or hotel',
+        'Morning-after walk during post-wedding brunch',
+        'Comprehensive pet taxi across all locations'
+      ],
+      cta: 'PLAN THE WEEKEND →'
+    }
+  ];
 
   return (
-    <section id="packages" className="py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0D1914] transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    <section id="packages" className="py-24 sm:py-36 px-4 sm:px-8 lg:px-16 bg-[#F5F0E8] dark:bg-[#11110E] transition-colors">
+      <div className="max-w-7xl mx-auto space-y-16">
         
-        {/* Section 4: Signature Packages (Exact Match to "Our Favorite Plants" in GreenNest) */}
-        <div>
-          {/* Centered Heading in Serif */}
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] tracking-tight">
-              Our Signature Wedding Packages
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-[#E6E0D4] dark:border-[#2E2E28] gap-6">
+          <div>
+            <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#89917B] dark:text-[#C9A96E] block mb-2">
+              // 04 · Curated Experiences
+            </span>
+            <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] tracking-tight text-[#171713] dark:text-[#F5F0E8]">
+              HOW MUCH OF <br />
+              <span className="italic text-[#89917B] dark:text-[#C9A96E]">THE DAY SHOULD WE HANDLE?</span>
             </h2>
-            <p className="font-sans text-sm sm:text-base text-[#799885] dark:text-[#8EAFA0] mt-3 italic">
-              Tailored pet attendant packages for every bridal vision — customized for your pet's personality.
-            </p>
+          </div>
 
-            {/* Category Filter Pills (Exact Match to Template Tabs) */}
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
-              {SERVICE_CATEGORIES.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition cursor-pointer ${
-                    activeCategory === cat
-                      ? 'bg-[#1E3D2F] text-white shadow-xs'
-                      : 'bg-[#F5F7F5] dark:bg-[#14251E] text-[#5A6A61] dark:text-[#A7B8AF] hover:text-[#1E3D2F] dark:hover:text-[#E8F0EA] border border-[#E2EAE4] dark:border-[#1E382D]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+          {/* Interactive Range Visual requested in Brief */}
+          <div className="space-y-2 text-right">
+            <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-[#89917B] dark:text-[#C9A96E] block">
+              Flexible Timeline Coverage
+            </span>
+            <div className="inline-flex items-center space-x-3 text-xs font-sans tracking-wider uppercase bg-white dark:bg-[#191915] px-4 py-2 rounded-full border border-[#E6E0D4] dark:border-[#2E2E28]">
+              <span className="text-[#89917B]">Just The Ceremony</span>
+              <span className="text-[#C9A96E]">────●────</span>
+              <span className="font-bold text-[#171713] dark:text-[#F5F0E8]">The Whole Day</span>
             </div>
-          </div>
-
-          {/* 8-Card Botanical Grid (4 cols on lg, 2 cols on sm) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {filteredServices.map((service) => (
-              <div
-                key={service.id}
-                className="bg-[#F5F7F5] dark:bg-[#14251E] rounded-2xl p-5 border border-[#E2EAE4] dark:border-[#1E382D] hover:border-[#1E3D2F] dark:hover:border-[#799885] shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Framed Image */}
-                  <div className="relative rounded-xl overflow-hidden aspect-4/3 mb-4 bg-white dark:bg-[#0D1914]">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                      loading="lazy"
-                    />
-                    {service.highlight && (
-                      <span className="absolute top-2.5 right-2.5 bg-[#1E3D2F]/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                        {service.highlight}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Title in Serif */}
-                  <h3 className="font-serif font-bold text-base sm:text-lg text-[#1E3D2F] dark:text-[#E8F0EA] text-center leading-snug mb-1">
-                    {service.title}
-                  </h3>
-
-                  {/* Duration / Price Note */}
-                  <p className="text-xs text-[#799885] dark:text-[#8EAFA0] text-center font-medium mb-3">
-                    {service.priceNote || service.duration}
-                  </p>
-
-                  {/* Brief Inclusions / Description */}
-                  <p className="text-xs text-[#5A6A61] dark:text-[#A7B8AF] text-center leading-relaxed line-clamp-2 mb-4">
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Dark Forest Green Action Button */}
-                <button
-                  onClick={() => onOpenWizard(service.category, service.title)}
-                  className="w-full py-2.5 px-4 rounded-xl bg-[#1E3D2F] hover:bg-[#152C22] text-white text-xs font-semibold tracking-wide transition shadow-xs flex items-center justify-center space-x-1.5 cursor-pointer"
-                >
-                  <span>Reserve Package</span>
-                  <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </button>
-              </div>
-            ))}
-          </div>
-
-          {/* Centered Outline Button below Grid */}
-          <div className="mt-12 text-center">
-            <button
-              onClick={() => onNavigate ? onNavigate('services') : onOpenWizard('Wedding Attendant', 'Custom Package Inquiry')}
-              className="px-8 py-3 rounded-full border border-[#1E3D2F] dark:border-[#799885] text-[#1E3D2F] dark:text-[#E8F0EA] hover:bg-[#1E3D2F] hover:text-white dark:hover:bg-[#799885] dark:hover:text-[#0D1914] text-xs sm:text-sm font-semibold tracking-wide transition cursor-pointer"
-            >
-              Explore Full Package Catalog & Add-ons
-            </button>
           </div>
         </div>
 
-        {/* Section 5: Promo Banner (Exact Match to "Spring Into Green - 15% Off..." Banner) */}
-        <div className="relative rounded-3xl overflow-hidden border border-[#E2EAE4] dark:border-[#1E382D] bg-[#E8F0EA] dark:bg-[#14251E] shadow-wedding">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-            {/* Left Content (7 Cols) */}
-            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-5">
-              <div className="inline-flex items-center space-x-2 bg-[#1E3D2F] text-white px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
-                <span>SPRING SPECIAL</span>
-                <span>·</span>
-                <span>$50 OFF</span>
-              </div>
+        {/* 3 Core Packages Cards (Double-Bezel Architecture) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          {packages.map((pkg) => (
+            <div
+              key={pkg.id}
+              className={`p-2 rounded-[2rem] transition-all duration-500 flex flex-col justify-between ${
+                pkg.isSignature
+                  ? 'bg-[#171713] text-white shadow-2xl scale-[1.02] border-2 border-[#C9A96E]'
+                  : 'bg-[#EFE9DF] dark:bg-[#1C1C18] border border-[#E2DBD0] dark:border-[#2E2E28] text-[#171713] dark:text-[#F5F0E8]'
+              }`}
+            >
+              {/* Inner Core */}
+              <div className={`p-8 sm:p-9 rounded-[calc(2rem-0.5rem)] flex-1 flex flex-col justify-between ${
+                pkg.isSignature
+                  ? 'bg-[#171713]'
+                  : 'bg-white dark:bg-[#151512]'
+              }`}>
+                <div>
+                  {/* Tier Label & Price */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`text-[10px] uppercase tracking-[0.2em] font-sans font-semibold ${
+                      pkg.isSignature ? 'text-[#C9A96E]' : 'text-[#89917B]'
+                    }`}>
+                      {pkg.tier}
+                    </span>
+                    <span className="text-xs font-sans uppercase tracking-wider text-[#89917B]">
+                      {pkg.promo}
+                    </span>
+                  </div>
 
-              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] tracking-tight leading-tight">
-                Spring Into Wedding Season — <br className="hidden sm:inline" />
-                <span className="italic font-light">$50 Off</span> Any Attendant Package!
-              </h3>
+                  <h3 className="font-serif text-3xl sm:text-4xl font-normal tracking-tight mb-1">
+                    {pkg.title}
+                  </h3>
+                  <p className="text-xs font-sans uppercase tracking-wider text-[#89917B] mb-4">
+                    {pkg.subtitle}
+                  </p>
 
-              <p className="text-sm sm:text-base text-[#465A4F] dark:text-[#A7B8AF] leading-relaxed max-w-xl">
-                Lock in your 2026 or 2027 wedding date with Lacie Kern today. Lock in current rates with zero annual price increases, plus an instant $50 booking voucher for Central Ohio couples.
-              </p>
+                  <div className="py-3 border-y border-current/10 my-4 flex items-baseline justify-between">
+                    <span className="font-serif text-2xl font-normal">
+                      {pkg.price}
+                    </span>
+                    <span className="text-xs font-sans text-current/60">
+                      {pkg.duration}
+                    </span>
+                  </div>
 
-              <div className="pt-2">
+                  <p className="text-xs sm:text-sm font-sans font-light leading-relaxed mb-6 text-current/75">
+                    {pkg.description}
+                  </p>
+
+                  {/* Inclusions */}
+                  <div className="space-y-2.5 mb-8">
+                    {pkg.inclusions.map((inc, i) => (
+                      <div key={i} className="flex items-start space-x-2 text-xs font-sans text-current/80">
+                        <span className="text-[#C9A96E] font-serif">✦</span>
+                        <span>{inc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA Button */}
                 <button
-                  onClick={() => onOpenWizard('Wedding Attendant', 'Spring $50 OFF Special')}
-                  className="px-8 py-3.5 rounded-full bg-[#1E3D2F] hover:bg-[#152C22] text-white font-medium text-sm transition shadow-md cursor-pointer flex items-center space-x-2"
+                  onClick={() => onOpenWizard('Wedding Attendant', pkg.title)}
+                  className={`w-full py-4 rounded-full font-sans text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-300 text-center cursor-pointer active:scale-[0.98] ${
+                    pkg.isSignature
+                      ? 'bg-[#C9A96E] hover:bg-[#B8975D] text-[#171713]'
+                      : 'bg-[#171713] hover:bg-[#2A2A24] text-white dark:bg-white dark:text-[#171713]'
+                  }`}
                 >
-                  <span>Claim Your $50 Credit</span>
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
+                  {pkg.cta}
                 </button>
               </div>
             </div>
+          ))}
+        </div>
 
-            {/* Right Photo (5 Cols) */}
-            <div className="lg:col-span-5 h-64 sm:h-80 lg:h-full relative overflow-hidden">
-              <img
-                src="/images/greenhouse-wedding.jpg"
-                alt="Spring into wedding season with Wags and Whiskers"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-transparent to-[#E8F0EA]/30 dark:to-[#14251E]/50 pointer-events-none" />
-            </div>
-          </div>
+        {/* View All Experiences Link */}
+        <div className="pt-6 text-center">
+          <button
+            onClick={onViewAllServices}
+            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-sans font-semibold uppercase tracking-[0.2em] text-[#171713] dark:text-[#F5F0E8] hover:text-[#89917B] dark:hover:text-[#C9A96E] transition cursor-pointer"
+          >
+            <span>View Complete Service Catalog & In-Home Sitting</span>
+            <span>→</span>
+          </button>
         </div>
 
       </div>

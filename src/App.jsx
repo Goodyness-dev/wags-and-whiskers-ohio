@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/home/Hero';
-import AboutSection from './components/home/AboutSection';
-import AmenitiesSection from './components/home/AmenitiesSection';
+import EditorialStatement from './components/home/EditorialStatement';
+import WeddingDayStory from './components/home/WeddingDayStory';
+import MeetLacie from './components/home/MeetLacie';
+import PersonalityBreak from './components/home/PersonalityBreak';
 import ServicesSection from './components/home/ServicesSection';
+import WhyAttendantComparison from './components/home/WhyAttendantComparison';
+import SocialProofStrip from './components/home/SocialProofStrip';
+import AmenitiesSection from './components/home/AmenitiesSection';
 import ReviewsSection from './components/home/ReviewsSection';
 import LocationHoursSection from './components/home/LocationHoursSection';
 import Footer from './components/layout/Footer';
@@ -29,7 +34,7 @@ export default function App() {
     try {
       const saved = localStorage.getItem('wags_theme');
       if (saved) return saved === 'dark';
-      return false; // Default to clean botanical ivory mode
+      return false; // Default to warm ivory editorial palette
     } catch {
       return false;
     }
@@ -149,8 +154,8 @@ export default function App() {
   }
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-[#0D1914] text-[#E8F0EA]' : 'bg-[#FAF8F5] text-[#242826]'} flex flex-col font-sans transition-colors duration-200`}>
-      {/* Global Navbar */}
+    <div className={`min-h-screen ${darkMode ? 'bg-[#11110E] text-[#F5F0E8]' : 'bg-[#F5F0E8] text-[#171713]'} flex flex-col font-sans transition-colors duration-300`}>
+      {/* Global Minimalist Editorial Navigation */}
       <Navbar 
         onOpenWizard={() => handleOpenWizard()} 
         currentPage={currentPage}
@@ -168,20 +173,46 @@ export default function App() {
           />
         ) : (
           <>
+            {/* 01. Cinematic Editorial Hero */}
             <Hero onOpenWizard={handleOpenWizard} />
-            <AboutSection onOpenWizard={() => handleOpenWizard()} />
-            <AmenitiesSection onOpenWizard={() => handleOpenWizard()} />
+
+            {/* 02. "THEY'RE FAMILY" Editorial Statement */}
+            <EditorialStatement />
+
+            {/* 03. "YOUR DOG'S BIG DAY" Chronological Wedding Narrative */}
+            <WeddingDayStory onOpenWizard={handleOpenWizard} />
+
+            {/* 04. Meet Lacie Kern Section */}
+            <MeetLacie onOpenWizard={handleOpenWizard} />
+
+            {/* 05. Personality Typography Break (Full Black Section) */}
+            <PersonalityBreak />
+
+            {/* 06. 3 Curated Primary Experiences */}
             <ServicesSection 
               onOpenWizard={handleOpenWizard}
-              onNavigate={handleNavigate}
+              onViewAllServices={() => handleNavigate('services')}
             />
-            <ReviewsSection onOpenWizard={() => handleOpenWizard()} />
-            <LocationHoursSection onOpenWizard={() => handleOpenWizard()} />
+
+            {/* 07. "Why Hire A Pet Attendant" Split Screen */}
+            <WhyAttendantComparison onOpenWizard={handleOpenWizard} />
+
+            {/* 08. Social Proof Credibility Strip */}
+            <SocialProofStrip />
+
+            {/* 09. Editorial Gallery Collage */}
+            <AmenitiesSection />
+
+            {/* 10. Couple Reviews Magazine Spreads */}
+            <ReviewsSection onOpenWizard={handleOpenWizard} />
+
+            {/* 11. Availability Lead Bar + Journal + FAQ + Service Area */}
+            <LocationHoursSection onOpenWizard={handleOpenWizard} />
           </>
         )}
       </main>
 
-      {/* Global Footer */}
+      {/* Global Dramatic Editorial Footer */}
       <Footer 
         onOpenWizard={() => handleOpenWizard()} 
         onNavigate={handleNavigate}
@@ -196,26 +227,20 @@ export default function App() {
       />
 
       {/* Sticky Mobile Bottom Bar */}
-      <div className={`fixed bottom-0 left-0 right-0 z-30 sm:hidden ${darkMode ? 'bg-[#0D1914]/95 border-[#1E382D]' : 'bg-[#FAF8F5]/95 border-[#E2EAE4]'} backdrop-blur-md border-t p-2.5 flex items-center gap-2.5 shadow-lg`}>
+      <div className={`fixed bottom-0 left-0 right-0 z-30 sm:hidden ${darkMode ? 'bg-[#11110E]/95 border-white/10' : 'bg-[#F5F0E8]/95 border-[#E6E0D4]'} backdrop-blur-md border-t p-2.5 flex items-center gap-2.5 shadow-lg`}>
         <a
           href={BUSINESS_INFO.social.facebookPage}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex-1 py-3 px-3.5 rounded-full ${darkMode ? 'bg-[#14251E] text-[#E8F0EA] border-[#1E382D]' : 'bg-white text-[#1E3D2F] border-[#E2EAE4]'} font-semibold text-xs flex items-center justify-center space-x-1.5 border active:scale-95 transition shadow-xs`}
+          className={`flex-1 py-3 px-3.5 rounded-full ${darkMode ? 'bg-[#191915] text-[#F5F0E8] border-white/10' : 'bg-white text-[#171713] border-[#E6E0D4]'} font-sans text-xs tracking-wider uppercase flex items-center justify-center space-x-1.5 border active:scale-95 transition shadow-xs`}
         >
-          <svg className="w-4 h-4 text-[#1E3D2F] dark:text-[#A7D1BD]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
           <span>Message Lacie</span>
         </a>
         <button
           onClick={() => handleOpenWizard()}
-          className="flex-1 py-3 px-3.5 rounded-full bg-[#1E3D2F] hover:bg-[#152C22] text-white font-semibold text-xs flex items-center justify-center space-x-1.5 shadow-sm active:scale-95 transition cursor-pointer"
+          className="flex-1 py-3 px-3.5 rounded-full bg-[#171713] hover:bg-[#2A2A24] dark:bg-white dark:hover:bg-[#EFE9DF] text-white dark:text-[#171713] font-sans text-xs tracking-wider uppercase font-semibold flex items-center justify-center space-x-1.5 shadow-sm active:scale-95 transition cursor-pointer"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 9v7.5" />
-          </svg>
-          <span>Check Date ($50 OFF)</span>
+          <span>Check My Date →</span>
         </button>
       </div>
     </div>

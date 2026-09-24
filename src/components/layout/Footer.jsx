@@ -18,93 +18,78 @@ export default function Footer({ onOpenWizard, onNavigate }) {
   };
 
   return (
-    <footer className="bg-[#12261E] text-[#C5D8CC] text-sm sm:text-base pb-16 sm:pb-0 border-t border-[#1E382D]" role="contentinfo">
-      {/* Pre-footer Callout Banner */}
-      <div className="bg-[#1E3D2F] py-12 px-4 sm:px-6 lg:px-8 border-b border-[#2A5240]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <span className="text-xs uppercase tracking-widest text-[#A7D1BD] font-semibold block mb-1">
-              Central Ohio Wedding Pet Attendant
-            </span>
-            <h3 className="font-serif text-2xl sm:text-4xl font-bold text-white tracking-tight">
-              Ready to include your pup in your big day?
-            </h3>
-            <p className="text-[#D2E2D7] mt-2 text-sm sm:text-base max-w-xl">
-              Lock in your wedding date today and receive $50 OFF your attendant package with zero future rate increases.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full md:w-auto shrink-0">
+    <footer className="bg-[#11110E] text-[#F5F0E8] border-t border-white/10 overflow-hidden" role="contentinfo">
+      {/* Dramatic Editorial Final Statement Callout (Section 26 in Brief) */}
+      <div className="py-24 sm:py-36 px-4 sm:px-8 lg:px-16 border-b border-white/10 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#C9A96E] block">
+            Begin The Conversation
+          </span>
+          <h2 className="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal leading-[0.98] tracking-tight text-[#F5F0E8]">
+            LET'S GET <br />
+            YOUR BEST FRIEND <br />
+            <span className="italic text-[#C9A96E]">ON THE GUEST LIST.</span>
+          </h2>
+          <p className="text-sm sm:text-base text-[#F5F0E8]/70 font-sans font-light max-w-xl mx-auto leading-relaxed">
+            Reserve your 2026 or 2027 wedding date with Lacie Kern and receive a complimentary timeline consultation plus your $50 reservation credit.
+          </p>
+          <div className="pt-4">
             <button
-              onClick={() => onOpenWizard('Wedding Attendant', '$50 OFF Booking Special')}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-[#1E3D2F] font-semibold text-sm hover:bg-[#FAF8F5] transition shadow-md active:scale-95 text-center cursor-pointer"
+              onClick={() => onOpenWizard('Wedding Attendant', 'Footer Final CTA')}
+              className="group pl-8 pr-3 py-4 rounded-full bg-[#F5F0E8] hover:bg-white text-[#171713] font-sans text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-300 inline-flex items-center space-x-4 cursor-pointer shadow-lg active:scale-[0.98]"
             >
-              Check Wedding Date ($50 OFF)
+              <span>Check Your Wedding Date</span>
+              <span className="w-9 h-9 rounded-full bg-[#171713] text-white flex items-center justify-center group-hover:translate-x-1.5 transition-transform">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
             </button>
-            <a
-              href={BUSINESS_INFO.social.facebookPage}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#12261E] hover:bg-black text-white font-medium text-sm transition border border-white/20 flex items-center justify-center space-x-2 active:scale-95 text-center"
-            >
-              <span>Message on Facebook</span>
-            </a>
           </div>
         </div>
       </div>
 
-      {/* Main Footer Columns */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Brand */}
+      {/* Navigation Columns */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 sm:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-xs font-sans">
+        {/* Brand Summary */}
         <div className="space-y-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-[#1E3D2F] text-white flex items-center justify-center font-bold shadow-sm border border-white/10">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 01-9-9c0-4.97 4.03-9 9-9 4.97 0 9 4.03 9 9 0 2.12-.74 4.07-1.97 5.61L12 21z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18" />
-              </svg>
-            </div>
-            <div>
-              <span className="font-serif font-bold text-white text-xl block tracking-tight">
-                {BUSINESS_INFO.name}
-              </span>
-              <span className="text-[11px] text-[#A7D1BD] uppercase tracking-wider font-semibold block">
-                Central Ohio Wedding Pet Attendant
-              </span>
-            </div>
-          </div>
-          <p className="text-[#8EAFA0] text-xs sm:text-sm leading-relaxed">
-            Professional wedding pet attendant services by Lacie Kern. 14+ years of dedicated pet care experience ensuring joyful, calm wedding celebrations.
+          <span className="font-serif text-2xl font-normal block text-[#F5F0E8]">
+            {BUSINESS_INFO.name}
+          </span>
+          <p className="text-white/60 leading-relaxed font-light">
+            Central Ohio's dedicated wedding pet attendant and bonded pet care service by Lacie Kern. 14+ years of professional animal care.
           </p>
-          <div className="pt-1">
+          <div className="pt-2">
             <a
               href={BUSINESS_INFO.social.facebookPage}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-xs font-semibold text-[#A7D1BD] hover:text-white transition"
+              className="text-[#C9A96E] hover:underline uppercase tracking-wider text-[11px]"
             >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-              <span>Connect with Lacie on Facebook</span>
+              Facebook Profile ↗
             </a>
           </div>
         </div>
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-serif text-white font-bold text-base mb-4">Explore Care</h4>
-          <ul className="space-y-2.5 text-xs sm:text-sm">
+        {/* Explore Navigation */}
+        <div className="space-y-3">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#89917B] font-semibold block">
+            Navigation
+          </span>
+          <ul className="space-y-2 text-white/70">
             {[
-              { label: 'Why Choose Lacie', target: '#why-us' },
-              { label: 'Signature Packages', target: '#packages' },
-              { label: 'The Wedding Experience', target: '#experience' },
-              { label: 'Bride Reviews', target: '#reviews' },
-              { label: 'Pet Care Journal & FAQ', target: '#journal' },
+              { label: 'The Experience', target: '#story' },
+              { label: 'Wedding Packages', target: '#packages' },
+              { label: 'Meet Lacie Kern', target: '#meet-lacie' },
+              { label: 'Photo Archive', target: '#gallery' },
+              { label: 'Couple Reviews', target: '#reviews' },
+              { label: 'Wedding Journal', target: '#journal' },
+              { label: 'Questions & FAQ', target: '#faq' },
             ].map(link => (
               <li key={link.label}>
-                <button 
-                  onClick={(e) => handleLinkClick(e, link.target)} 
-                  className="hover:text-white transition text-[#8EAFA0] hover:underline text-left cursor-pointer"
+                <button
+                  onClick={(e) => handleLinkClick(e, link.target)}
+                  className="hover:text-white transition cursor-pointer text-left"
                 >
                   {link.label}
                 </button>
@@ -113,76 +98,45 @@ export default function Footer({ onOpenWizard, onNavigate }) {
           </ul>
         </div>
 
-        {/* Venue Coverage */}
-        <div>
-          <h4 className="font-serif text-white font-bold text-base mb-4">Service Area</h4>
-          <div className="space-y-2.5 text-xs sm:text-sm">
-            <div className="flex justify-between items-center py-1.5 border-b border-[#1E382D]">
-              <span className="text-[#8EAFA0]">Primary Hub</span>
-              <span className="text-white font-medium">Columbus Metro</span>
-            </div>
-            <div className="flex justify-between items-center py-1.5 border-b border-[#1E382D]">
-              <span className="text-[#8EAFA0]">Suburbs</span>
-              <span className="text-[#A7D1BD] font-medium">Dublin, Powell, New Albany</span>
-            </div>
-            <div className="flex justify-between items-center py-1.5 border-b border-[#1E382D]">
-              <span className="text-[#8EAFA0]">Venues</span>
-              <span className="text-white font-medium">Statewide Ohio Travel</span>
-            </div>
-            <p className="text-[11px] text-[#6E8F7F] pt-2 leading-relaxed">
-              Available 7 days a week for rehearsals, ceremonies, and receptions.
+        {/* Service Area */}
+        <div className="space-y-3">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#89917B] font-semibold block">
+            Central Ohio Hub
+          </span>
+          <div className="space-y-2 text-white/70 leading-relaxed font-light">
+            <p>Columbus Metro · Dublin · Powell</p>
+            <p>New Albany · Westerville · Upper Arlington</p>
+            <p>Worthington · Delaware · Grove City</p>
+            <p className="text-[#C9A96E] pt-1">
+              Statewide Ohio Travel for All Venues
             </p>
           </div>
         </div>
 
-        {/* Community & Contact */}
-        <div>
-          <h4 className="font-serif text-white font-bold text-base mb-4">Vendor Community</h4>
-          <address className="not-italic space-y-3 text-xs sm:text-sm">
-            <div className="flex items-start space-x-2.5">
-              <svg className="w-5 h-5 text-[#A7D1BD] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-              </svg>
-              <span className="text-[#D2E2D7]">
-                Central Ohio & Surrounding Areas<br />
-                <span className="text-[11px] text-[#6E8F7F]">Westerville • Upper Arlington • Delaware</span>
-              </span>
-            </div>
-            <div className="flex items-center space-x-2.5">
-              <svg className="w-5 h-5 text-[#A7D1BD] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-              </svg>
-              <a
-                href={BUSINESS_INFO.social.vendorGroup}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-[#A7D1BD] hover:underline"
-              >
-                OHIO wedding couples & vendors member
-              </a>
-            </div>
-            <p className="text-[11px] text-[#6E8F7F] pt-1">
-              Active vendor recommended by Central Ohio wedding planners and couples.
-            </p>
-          </address>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-[#1E382D] py-6 px-4 text-center text-xs text-[#6E8F7F]">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span>© {new Date().getFullYear()} {BUSINESS_INFO.legalName}. All rights reserved.</span>
-          <div className="flex items-center space-x-4">
-            <span>Central Ohio Wedding Pet Attendant Services</span>
-            <span>•</span>
+        {/* Accreditations */}
+        <div className="space-y-3">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-[#89917B] font-semibold block">
+            Community
+          </span>
+          <p className="text-white/60 font-light leading-relaxed">
+            Proud active vendor on the <em>OHIO wedding couples & vendors</em> group. Recommended by local Columbus and Central Ohio venues.
+          </p>
+          <div className="pt-2">
             <button
               onClick={() => onNavigate('admin')}
-              className="text-[#6E8F7F] hover:text-[#A7D1BD] transition underline underline-offset-2 cursor-pointer"
+              className="text-white/40 hover:text-[#C9A96E] transition underline underline-offset-4 text-[10px] uppercase tracking-wider cursor-pointer"
             >
               Attendant Admin Portal
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10 py-8 px-4 text-center text-[11px] font-sans text-white/40">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span>© {new Date().getFullYear()} {BUSINESS_INFO.legalName}. All rights reserved.</span>
+          <span>The Four-Legged Guest of Honor · Central Ohio</span>
         </div>
       </div>
     </footer>

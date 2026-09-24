@@ -1,212 +1,144 @@
 import React, { useState } from 'react';
-import { AMENITIES } from '../../data/amenitiesData';
-import { IMAGES } from '../../data/imageManifest';
 
-export default function AmenitiesSection({ onOpenWizard }) {
+export default function AmenitiesSection() {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-  const galleryItems = [
-    { title: 'The Aisle Escort', subtitle: 'Ring Bearer Dog & Ceremony Entry', img: IMAGES.aisle.src },
-    { title: 'Photographer Support', subtitle: 'Squeakers, Treats & Flawless Eye Contact', img: IMAGES.photoAssistant.src },
-    { title: 'Cocktail Hour Greeting', subtitle: 'Gentle, Supervised Guest Socializing', img: IMAGES.cocktailHour.src },
-    { title: 'Chauffeured Ride Home', subtitle: 'Safe Pet Taxi & Bedtime Tuck-In', img: IMAGES.safeRideHome.src },
+  const photos = [
+    {
+      src: '/images/hero-wedding-dog.jpg',
+      title: 'The Ceremony Escort',
+      caption: 'Golden Retriever ring bearer awaiting the processional vows at The Estate at New Albany.',
+      span: 'lg:col-span-8 aspect-16/10'
+    },
+    {
+      src: '/images/dog-floral-collar.jpg',
+      title: 'Floral Collar Details',
+      caption: 'Handcrafted eucalyptus and blush garden rose collar safely fitted before morning photos.',
+      span: 'lg:col-span-4 aspect-4/5'
+    },
+    {
+      src: '/images/wedding-photo-assistant.jpg',
+      title: 'Portrait Focus Co-Pilot',
+      caption: 'Eye-level squeakers and reward treats creating alert, joyful wedding portraits.',
+      span: 'lg:col-span-4 aspect-square'
+    },
+    {
+      src: '/images/aisle-escort.jpg',
+      title: 'Down The Aisle',
+      caption: 'Flawless pacing down the runner with zero leash tugging or guest jumping.',
+      span: 'lg:col-span-4 aspect-square'
+    },
+    {
+      src: '/images/cocktail-hour-dog.jpg',
+      title: 'Cocktail Hour Greeter',
+      caption: 'Gentle guest hugs and supervised lawn socializing during cocktail hour.',
+      span: 'lg:col-span-4 aspect-square'
+    },
+    {
+      src: '/images/safe-ride-home.jpg',
+      title: 'Chauffeured Safe Ride',
+      caption: 'Air-conditioned pet taxi departing venue so the bride and groom can dance all night.',
+      span: 'lg:col-span-12 aspect-21/9'
+    }
   ];
 
   return (
-    <section id="experience" className="py-20 sm:py-28 bg-[#F5F7F5] dark:bg-[#08120E] transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    <section id="gallery" className="py-24 sm:py-36 px-4 sm:px-8 lg:px-16 bg-[#F5F0E8] dark:bg-[#11110E] transition-colors">
+      <div className="max-w-7xl mx-auto space-y-16">
         
-        {/* Section 3: Atmospheric Bento Banner (Exact Match to Section 3 in GreenNest Template) */}
-        <div className="relative rounded-3xl overflow-hidden p-8 sm:p-12 lg:p-14 bg-gradient-to-br from-[#1E3D2F] via-[#162E23] to-[#0E2019] text-white shadow-wedding-lg">
-          {/* Subtle botanical backdrop glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#799885]/20 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="max-w-xl mb-10">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#A7D1BD] bg-white/10 px-3.5 py-1 rounded-full inline-block mb-3">
-              Curated Wedding Experiences
+        {/* Section Header with Embedded Statement Quote */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-[#E6E0D4] dark:border-[#2E2E28] gap-6">
+          <div>
+            <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#89917B] dark:text-[#C9A96E] block mb-2">
+              // 06 · The Visual Archive
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight">
-              Calm, effortless moments for your once-in-a-lifetime day
+            <h2 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.02] tracking-tight text-[#171713] dark:text-[#F5F0E8]">
+              THE BEST <br />
+              <span className="italic text-[#89917B] dark:text-[#C9A96E]">WEDDING GUESTS</span> <br />
+              HAVE PAWS.
             </h2>
           </div>
-
-          {/* 2 Translucent Frosted Cards with Plant / Pet Photography (Exact Match to Template) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {/* Bento Card 1 */}
-            <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 group hover:bg-white/15 transition duration-300">
-              <div className="w-full sm:w-1/2 space-y-3">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#A7D1BD]">
-                  Ceremony Focus
-                </span>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold leading-snug">
-                  The Ceremony & Cocktail Hour Attendant
-                </h3>
-                <p className="text-xs text-[#D2E2D7] leading-relaxed">
-                  Dedicated 3 to 4-hour escort, guest meet-and-greets, potty breaks, and immediate photo handling.
-                </p>
-                <button
-                  onClick={() => onOpenWizard('Wedding Attendant', 'Ceremony & Cocktail Hour')}
-                  className="inline-flex items-center space-x-2 text-xs font-bold text-white uppercase tracking-wider hover:text-[#A7D1BD] transition pt-2 cursor-pointer"
-                >
-                  <span>Explore Experience</span>
-                  <span>→</span>
-                </button>
-              </div>
-              <div className="w-full sm:w-1/2 rounded-xl overflow-hidden aspect-square border border-white/15">
-                <img
-                  src="/images/aisle-escort.jpg"
-                  alt="Ceremony aisle escort dog"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Bento Card 2 */}
-            <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 group hover:bg-white/15 transition duration-300">
-              <div className="w-full sm:w-1/2 space-y-3">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#A7D1BD]">
-                  Full Day Care
-                </span>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold leading-snug">
-                  The Complete Wedding Concierge
-                </h3>
-                <p className="text-xs text-[#D2E2D7] leading-relaxed">
-                  Full 6 to 8-hour day-of companion, rehearsal coordination, evening pet taxi transport, and home tuck-in.
-                </p>
-                <button
-                  onClick={() => onOpenWizard('Wedding Attendant', 'Full Day VIP Attendant')}
-                  className="inline-flex items-center space-x-2 text-xs font-bold text-white uppercase tracking-wider hover:text-[#A7D1BD] transition pt-2 cursor-pointer"
-                >
-                  <span>Explore Experience</span>
-                  <span>→</span>
-                </button>
-              </div>
-              <div className="w-full sm:w-1/2 rounded-xl overflow-hidden aspect-square border border-white/15">
-                <img
-                  src="/images/golden-retriever-suit.jpg"
-                  alt="Full day wedding dog VIP"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
+          <p className="text-sm sm:text-base text-[#171713]/60 dark:text-[#F5F0E8]/60 font-sans font-light max-w-sm leading-relaxed">
+            Real Central Ohio ceremonies, receptions, and quiet candid moments with our attendants. Click any photograph to view the full resolution archive.
+          </p>
         </div>
 
-        {/* 6 Guarantees Bento Grid */}
-        <div>
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA]">
-              Wedding Day Peace of Mind
-            </h3>
-            <p className="text-sm text-[#799885] dark:text-[#8EAFA0] mt-2 italic">
-              Every detail is handled with precision, patience, and love so your family misses nothing.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {AMENITIES.map((item, idx) => (
-              <div
-                key={item.id}
-                className="bg-white dark:bg-[#14251E] p-8 rounded-2xl border border-[#E2EAE4] dark:border-[#1E382D] hover:border-[#1E3D2F] dark:hover:border-[#799885] transition-all card-thick-hover"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#1E3D2F] dark:text-[#A7D1BD] bg-[#E8F0EA] dark:bg-[#1E382D] px-3 py-1 rounded-md">
-                    {item.badge}
-                  </span>
-                  <span className="text-xs font-mono text-[#799885] dark:text-[#8EAFA0]">
-                    // 0{idx + 1}
-                  </span>
-                </div>
-                <h4 className="font-serif text-lg font-bold text-[#1E3D2F] dark:text-[#E8F0EA] mb-2">
-                  {item.title}
+        {/* Asymmetrical Editorial Collage */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+          {photos.map((photo, idx) => (
+            <div
+              key={idx}
+              onClick={() => setSelectedPhoto(photo)}
+              className={`${photo.span} group relative cursor-pointer overflow-hidden rounded-[2rem] bg-[#EFE9DF] dark:bg-[#1C1C18] border border-[#E2DBD0] dark:border-[#2E2E28] shadow-sm`}
+            >
+              <img
+                src={photo.src}
+                alt={photo.title}
+                className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 filter brightness-[0.96]"
+                loading="lazy"
+              />
+              
+              {/* Subtle Editorial Overlay on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 sm:p-8 flex flex-col justify-end text-white">
+                <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-[#C9A96E]">
+                  View Photograph ↗
+                </span>
+                <h4 className="font-serif text-2xl font-normal mt-1">
+                  {photo.title}
                 </h4>
-                <p className="text-xs sm:text-sm text-[#5A6A61] dark:text-[#A7B8AF] leading-relaxed">
-                  {item.description}
+                <p className="text-xs font-sans text-white/75 mt-1 max-w-md line-clamp-2">
+                  {photo.caption}
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Wedding Moments Visual Gallery & Lightbox */}
-        <div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#799885] dark:text-[#8EAFA0]">
-                Ohio Wedding Gallery
-              </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] mt-1">
-                Real Wedding Moments in Central Ohio
-              </h3>
             </div>
-            <p className="text-xs text-[#799885] dark:text-[#8EAFA0]">
-              Click any photo to enlarge and view real ceremony handling.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {galleryItems.map((item, idx) => (
-              <div
-                key={idx}
-                onClick={() => setSelectedPhoto(item)}
-                className="group cursor-pointer rounded-2xl overflow-hidden border border-[#E2EAE4] dark:border-[#1E382D] hover:border-[#1E3D2F] transition-all relative aspect-4/3 sm:aspect-square bg-white dark:bg-[#14251E]"
-              >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end text-white">
-                  <span className="text-[11px] font-medium tracking-wider text-[#D2E2D7] uppercase block">
-                    {item.subtitle}
-                  </span>
-                  <h4 className="font-serif text-base font-bold leading-snug">
-                    {item.title}
-                  </h4>
-                </div>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
 
-        {/* Lightbox Modal */}
+        {/* Clean Lightbox Modal */}
         {selectedPhoto && (
           <div
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setSelectedPhoto(null)}
           >
             <div
-              className="bg-white dark:bg-[#14251E] max-w-3xl w-full rounded-2xl overflow-hidden border border-[#E2EAE4] dark:border-[#1E382D] shadow-2xl relative"
+              className="bg-[#171713] text-[#F5F0E8] max-w-4xl w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl relative"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-black transition cursor-pointer"
-                aria-label="Close modal"
+                className="absolute top-5 right-5 z-10 p-2.5 rounded-full bg-black/50 hover:bg-black text-white transition cursor-pointer"
+                aria-label="Close"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <img
-                src={selectedPhoto.img}
-                alt={selectedPhoto.title}
-                className="w-full max-h-[65vh] object-cover"
-              />
-              <div className="p-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#799885] dark:text-[#8EAFA0]">
-                  {selectedPhoto.subtitle}
+
+              <div className="max-h-[70vh] overflow-hidden bg-black flex items-center justify-center">
+                <img
+                  src={selectedPhoto.src}
+                  alt={selectedPhoto.title}
+                  className="w-full max-h-[70vh] object-contain"
+                />
+              </div>
+
+              <div className="p-6 sm:p-8 bg-[#171713] border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                  <h4 className="font-serif text-2xl font-normal text-[#F5F0E8]">
+                    {selectedPhoto.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#F5F0E8]/70 mt-1 font-sans font-light">
+                    {selectedPhoto.caption}
+                  </p>
+                </div>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#C9A96E] shrink-0">
+                  Wags & Whiskers Archive
                 </span>
-                <h4 className="font-serif text-2xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] mt-1">
-                  {selectedPhoto.title}
-                </h4>
               </div>
             </div>
           </div>
         )}
+
       </div>
     </section>
   );

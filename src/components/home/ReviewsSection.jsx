@@ -2,78 +2,102 @@ import React from 'react';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function ReviewsSection({ onOpenWizard }) {
+  const reviews = [
+    {
+      couple: 'SARAH + MURPHY',
+      venue: 'THE ESTATE AT NEW ALBANY',
+      role: 'Golden Retriever Ring Bearer Dog',
+      quote: 'Having Lacie there was genuinely one of the best decisions we made for our wedding. Our Golden Retriever Murphy walked down the aisle perfectly, posed like a model for portraits, and was tucked in asleep at our home before dinner was served.',
+      image: '/images/bride-dog-portrait.jpg',
+      date: 'Spring 2026 Celebration'
+    },
+    {
+      couple: 'EMILY & JORDAN + BAILEY',
+      venue: 'FRANKLIN PARK CONSERVATORY',
+      role: 'Rescue Pup Cocktail Greeter',
+      quote: 'We couldn’t imagine getting married without Bailey, but didn’t want our bridesmaids or parents stuck babysitting. Lacie was calm, loving, and completely in control. 10/10 recommend to every Central Ohio bride.',
+      image: '/images/wedding-dog-centerpiece.jpg',
+      date: 'Garden Conservatory Ceremony'
+    }
+  ];
+
   return (
-    <section id="reviews" className="py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0D1914] transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="py-24 sm:py-36 px-4 sm:px-8 lg:px-16 bg-[#171713] text-[#F5F0E8] transition-colors">
+      <div className="max-w-7xl mx-auto space-y-24">
         
-        {/* Centered Heading in Serif matching GreenNest */}
-        <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] tracking-tight">
-            Our Happy Brides & Couples Say It Best
-          </h2>
-          <p className="font-sans text-sm sm:text-base text-[#799885] dark:text-[#8EAFA0] mt-3 italic">
-            Verified reviews from Central Ohio brides and pet parents.
-          </p>
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-white/10 gap-6">
+          <div>
+            <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#C9A96E] block mb-2">
+              // 07 · Wedding Memories & Words
+            </span>
+            <h2 className="font-serif text-4xl sm:text-6xl font-normal leading-tight">
+              FROM COUPLES WHO <br />
+              <span className="italic text-[#C9A96E]">BROUGHT THEIR BEST FRIEND.</span>
+            </h2>
+          </div>
+          <a
+            href={BUSINESS_INFO.social.vendorGroup}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-sans tracking-[0.2em] uppercase text-[#C9A96E] hover:underline"
+          >
+            Verified on Ohio Wedding Vendors Group ↗
+          </a>
         </div>
 
-        {/* 2 Wide Side-by-Side Cards (Exact Match to GreenNest Testimonials) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {BUSINESS_INFO.reviews.map((rev) => (
-            <div
-              key={rev.id}
-              className="bg-[#F5F7F5] dark:bg-[#14251E] rounded-3xl border border-[#E2EAE4] dark:border-[#1E382D] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-sm hover:shadow-md transition duration-300"
+        {/* Full Editorial Spreads (1 Review per Layout Row) */}
+        <div className="space-y-24 sm:space-y-36">
+          {reviews.map((rev, idx) => (
+            <div 
+              key={idx}
+              className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${
+                idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              }`}
             >
-              {/* Left Photo of Bride / Pet Parent */}
-              <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shrink-0 border border-[#E2EAE4] dark:border-[#1E382D] bg-white dark:bg-[#0D1914]">
-                <img
-                  src={rev.image}
-                  alt={rev.name}
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
+              {/* Photo Frame (Double-Bezel) */}
+              <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div className="p-2 bg-white/5 border border-white/10 rounded-[2rem] group">
+                  <div className="rounded-[calc(2rem-0.5rem)] overflow-hidden aspect-4/5">
+                    <img
+                      src={rev.image}
+                      alt={rev.couple}
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
 
-              {/* Right Review Content */}
-              <div className="space-y-3 text-center sm:text-left">
-                {/* 5 Gold Stars */}
-                <div className="flex items-center justify-center sm:justify-start space-x-1 text-amber-500 text-sm">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
+              {/* Editorial Quote Spread */}
+              <div className={`lg:col-span-7 space-y-6 ${idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="flex items-center space-x-3 text-xs font-sans tracking-[0.2em] uppercase text-[#C9A96E]">
+                  <span>{rev.couple}</span>
+                  <span>·</span>
+                  <span className="text-[#89917B]">{rev.venue}</span>
                 </div>
 
-                {/* Review Quote */}
-                <p className="text-xs sm:text-sm text-[#465A4F] dark:text-[#C5D8CC] leading-relaxed italic">
-                  "{rev.quote}"
-                </p>
+                {/* 5 Delicate Stars */}
+                <div className="flex items-center space-x-1.5 text-[#C9A96E] text-xs">
+                  <span>★★★★★</span>
+                  <span className="text-[10px] uppercase tracking-wider text-white/50 ml-2">
+                    {rev.role}
+                  </span>
+                </div>
 
-                {/* Author Info */}
-                <div className="pt-1">
-                  <h4 className="font-serif font-bold text-sm sm:text-base text-[#1E3D2F] dark:text-[#E8F0EA]">
-                    {rev.name}
-                  </h4>
-                  <span className="text-[11px] text-[#799885] dark:text-[#8EAFA0] block font-medium">
-                    {rev.role} · {rev.venue}
+                {/* Large Editorial Quote */}
+                <blockquote className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal leading-relaxed text-[#F5F0E8] italic">
+                  "{rev.quote}"
+                </blockquote>
+
+                <div className="pt-2">
+                  <span className="text-[11px] font-sans tracking-widest uppercase text-white/40 block">
+                    {rev.date}
                   </span>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Proof Link to Ohio Wedding Couples & Vendors Facebook Group */}
-        <div className="mt-12 text-center">
-          <a
-            href={BUSINESS_INFO.social.vendorGroup}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-[#1E3D2F] dark:text-[#A7D1BD] hover:underline"
-          >
-            <span>Verified active vendor on OHIO wedding couples & vendors group</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
         </div>
 
       </div>
