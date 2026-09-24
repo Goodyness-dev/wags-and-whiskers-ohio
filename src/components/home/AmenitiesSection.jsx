@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { AMENITIES } from '../../data/amenitiesData';
 import { IMAGES } from '../../data/imageManifest';
 
@@ -13,59 +13,136 @@ export default function AmenitiesSection({ onOpenWizard }) {
   ];
 
   return (
-    <section id="amenities" className="py-16 sm:py-24 bg-[#FAF8F5] dark:bg-[#1C1917] transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#5B7566] dark:text-[#A7D1BD] bg-[#EBF2EE] dark:bg-[#203129] px-3.5 py-1.5 rounded-full inline-block mb-3">
-            Day-Of Care & Guarantees
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#2B2623] dark:text-[#F5EFEB] tracking-tight">
-            Wedding Day Peace of Mind
-          </h2>
-          <p className="text-base sm:text-lg text-[#5C534E] dark:text-[#C5BCB6] mt-4 leading-relaxed">
-            Every step of your pet's day is handled with precision, patience, and love so nobody in your family misses a single celebratory moment.
-          </p>
+    <section id="experience" className="py-20 sm:py-28 bg-[#F5F7F5] dark:bg-[#08120E] transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        
+        {/* Section 3: Atmospheric Bento Banner (Exact Match to Section 3 in GreenNest Template) */}
+        <div className="relative rounded-3xl overflow-hidden p-8 sm:p-12 lg:p-14 bg-gradient-to-br from-[#1E3D2F] via-[#162E23] to-[#0E2019] text-white shadow-wedding-lg">
+          {/* Subtle botanical backdrop glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#799885]/20 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-xl mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#A7D1BD] bg-white/10 px-3.5 py-1 rounded-full inline-block mb-3">
+              Curated Wedding Experiences
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight">
+              Calm, effortless moments for your once-in-a-lifetime day
+            </h2>
+          </div>
+
+          {/* 2 Translucent Frosted Cards with Plant / Pet Photography (Exact Match to Template) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Bento Card 1 */}
+            <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 group hover:bg-white/15 transition duration-300">
+              <div className="w-full sm:w-1/2 space-y-3">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#A7D1BD]">
+                  Ceremony Focus
+                </span>
+                <h3 className="font-serif text-xl sm:text-2xl font-bold leading-snug">
+                  The Ceremony & Cocktail Hour Attendant
+                </h3>
+                <p className="text-xs text-[#D2E2D7] leading-relaxed">
+                  Dedicated 3 to 4-hour escort, guest meet-and-greets, potty breaks, and immediate photo handling.
+                </p>
+                <button
+                  onClick={() => onOpenWizard('Wedding Attendant', 'Ceremony & Cocktail Hour')}
+                  className="inline-flex items-center space-x-2 text-xs font-bold text-white uppercase tracking-wider hover:text-[#A7D1BD] transition pt-2 cursor-pointer"
+                >
+                  <span>Explore Experience</span>
+                  <span>→</span>
+                </button>
+              </div>
+              <div className="w-full sm:w-1/2 rounded-xl overflow-hidden aspect-square border border-white/15">
+                <img
+                  src="/images/aisle-escort.jpg"
+                  alt="Ceremony aisle escort dog"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Bento Card 2 */}
+            <div className="bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 group hover:bg-white/15 transition duration-300">
+              <div className="w-full sm:w-1/2 space-y-3">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#A7D1BD]">
+                  Full Day Care
+                </span>
+                <h3 className="font-serif text-xl sm:text-2xl font-bold leading-snug">
+                  The Complete Wedding Concierge
+                </h3>
+                <p className="text-xs text-[#D2E2D7] leading-relaxed">
+                  Full 6 to 8-hour day-of companion, rehearsal coordination, evening pet taxi transport, and home tuck-in.
+                </p>
+                <button
+                  onClick={() => onOpenWizard('Wedding Attendant', 'Full Day VIP Attendant')}
+                  className="inline-flex items-center space-x-2 text-xs font-bold text-white uppercase tracking-wider hover:text-[#A7D1BD] transition pt-2 cursor-pointer"
+                >
+                  <span>Explore Experience</span>
+                  <span>→</span>
+                </button>
+              </div>
+              <div className="w-full sm:w-1/2 rounded-xl overflow-hidden aspect-square border border-white/15">
+                <img
+                  src="/images/golden-retriever-suit.jpg"
+                  alt="Full day wedding dog VIP"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 6 Guarantees Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {AMENITIES.map((item, idx) => (
-            <div
-              key={item.id}
-              className="bg-white dark:bg-[#262220] p-7 rounded-3xl border-2 border-[#EFE6DD] dark:border-[#3D3733] hover:border-[#8E5B47] transition-all card-thick-hover"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#8E5B47] dark:text-[#E8A58B] bg-[#F7ECE6] dark:bg-[#3D2C24] px-3 py-1 rounded-md">
-                  {item.badge}
-                </span>
-                <span className="text-xs font-mono text-[#736760] dark:text-[#A89F99]">
-                  0{idx + 1}
-                </span>
+        <div>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA]">
+              Wedding Day Peace of Mind
+            </h3>
+            <p className="text-sm text-[#799885] dark:text-[#8EAFA0] mt-2 italic">
+              Every detail is handled with precision, patience, and love so your family misses nothing.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {AMENITIES.map((item, idx) => (
+              <div
+                key={item.id}
+                className="bg-white dark:bg-[#14251E] p-8 rounded-2xl border border-[#E2EAE4] dark:border-[#1E382D] hover:border-[#1E3D2F] dark:hover:border-[#799885] transition-all card-thick-hover"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#1E3D2F] dark:text-[#A7D1BD] bg-[#E8F0EA] dark:bg-[#1E382D] px-3 py-1 rounded-md">
+                    {item.badge}
+                  </span>
+                  <span className="text-xs font-mono text-[#799885] dark:text-[#8EAFA0]">
+                    // 0{idx + 1}
+                  </span>
+                </div>
+                <h4 className="font-serif text-lg font-bold text-[#1E3D2F] dark:text-[#E8F0EA] mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-[#5A6A61] dark:text-[#A7B8AF] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#2B2623] dark:text-[#F5EFEB] mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm text-[#5C534E] dark:text-[#C5BCB6] leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Wedding Moments Visual Gallery */}
-        <div className="mt-12">
+        {/* Wedding Moments Visual Gallery & Lightbox */}
+        <div>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#8E5B47] dark:text-[#E8A58B]">
-                Photo Moments
+              <span className="text-xs font-bold uppercase tracking-wider text-[#799885] dark:text-[#8EAFA0]">
+                Ohio Wedding Gallery
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#2B2623] dark:text-[#F5EFEB] mt-1">
-                How We Make Magic On Wedding Day
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] mt-1">
+                Real Wedding Moments in Central Ohio
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-[#736760] dark:text-[#A89F99] max-w-md">
-              Click any moment below to view the full resolution photograph.
+            <p className="text-xs text-[#799885] dark:text-[#8EAFA0]">
+              Click any photo to enlarge and view real ceremony handling.
             </p>
           </div>
 
@@ -74,7 +151,7 @@ export default function AmenitiesSection({ onOpenWizard }) {
               <div
                 key={idx}
                 onClick={() => setSelectedPhoto(item)}
-                className="group cursor-pointer rounded-2xl overflow-hidden card-thick border-2 border-[#EFE6DD] dark:border-[#3D3733] hover:border-[#8E5B47] transition-all relative aspect-4/3 sm:aspect-square"
+                className="group cursor-pointer rounded-2xl overflow-hidden border border-[#E2EAE4] dark:border-[#1E382D] hover:border-[#1E3D2F] transition-all relative aspect-4/3 sm:aspect-square bg-white dark:bg-[#14251E]"
               >
                 <img
                   src={item.img}
@@ -83,10 +160,10 @@ export default function AmenitiesSection({ onOpenWizard }) {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end text-white">
-                  <span className="text-xs font-bold tracking-wider text-[#F7ECE6] uppercase block">
+                  <span className="text-[11px] font-medium tracking-wider text-[#D2E2D7] uppercase block">
                     {item.subtitle}
                   </span>
-                  <h4 className="text-base font-bold leading-snug">
+                  <h4 className="font-serif text-base font-bold leading-snug">
                     {item.title}
                   </h4>
                 </div>
@@ -102,7 +179,7 @@ export default function AmenitiesSection({ onOpenWizard }) {
             onClick={() => setSelectedPhoto(null)}
           >
             <div
-              className="bg-white dark:bg-[#262220] max-w-3xl w-full rounded-3xl overflow-hidden border-2 border-[#EFE6DD] dark:border-[#3D3733] shadow-2xl relative"
+              className="bg-white dark:bg-[#14251E] max-w-3xl w-full rounded-2xl overflow-hidden border border-[#E2EAE4] dark:border-[#1E382D] shadow-2xl relative"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -120,10 +197,10 @@ export default function AmenitiesSection({ onOpenWizard }) {
                 className="w-full max-h-[65vh] object-cover"
               />
               <div className="p-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#8E5B47] dark:text-[#E8A58B]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#799885] dark:text-[#8EAFA0]">
                   {selectedPhoto.subtitle}
                 </span>
-                <h4 className="text-2xl font-bold text-[#2B2623] dark:text-[#F5EFEB] mt-1">
+                <h4 className="font-serif text-2xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] mt-1">
                   {selectedPhoto.title}
                 </h4>
               </div>

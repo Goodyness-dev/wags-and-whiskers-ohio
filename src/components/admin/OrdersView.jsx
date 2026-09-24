@@ -149,7 +149,7 @@ export default function OrdersView() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search customer, vehicle, service, or #ID..."
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none transition"
             />
           </form>
 
@@ -160,12 +160,12 @@ export default function OrdersView() {
               className="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 transition"
               title="Refresh Quotes"
             >
-              <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-[#8E5B47]' : ''}`} />
+              <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-[#1E3D2F]' : ''}`} />
             </button>
 
             <button
               onClick={() => setIsNewOrderOpen(true)}
-              className="py-2.5 px-4 bg-[#8E5B47] hover:bg-[#724534] text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md shadow-[#8E5B47]/20 flex items-center space-x-1.5 active:scale-95 cursor-pointer shrink-0"
+              className="py-2.5 px-4 bg-[#1E3D2F] hover:bg-[#152C22] text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md shadow-[#1E3D2F]/20 flex items-center space-x-1.5 active:scale-95 cursor-pointer shrink-0"
             >
               <Plus className="w-4 h-4" />
               <span>+ Record Walk-In / Call</span>
@@ -187,7 +187,7 @@ export default function OrdersView() {
               onClick={() => setStatusFilter(tab.id)}
               className={`px-3.5 py-2 rounded-xl font-bold whitespace-nowrap transition flex items-center space-x-1.5 ${
                 statusFilter === tab.id
-                  ? 'bg-[#8E5B47] text-white shadow-sm shadow-red-600/25'
+                  ? 'bg-[#1E3D2F] text-white shadow-sm shadow-red-600/25'
                   : 'bg-slate-100 hover:bg-slate-200/80 text-slate-600 hover:text-slate-900 border border-slate-200/60'
               }`}
             >
@@ -207,7 +207,7 @@ export default function OrdersView() {
       {/* Orders List / Table */}
       {isLoading ? (
         <div className="flex flex-col items-center justify-center py-20 bg-white border border-slate-200/80 rounded-2xl text-slate-400 space-y-3">
-          <Loader2 className="w-8 h-8 animate-spin text-[#8E5B47]" />
+          <Loader2 className="w-8 h-8 animate-spin text-[#1E3D2F]" />
           <span className="text-sm font-medium">Retrieving quote requests from database...</span>
         </div>
       ) : filteredQuotes.length === 0 ? (
@@ -221,7 +221,7 @@ export default function OrdersView() {
           </p>
           <button
             onClick={() => setIsNewOrderOpen(true)}
-            className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#8E5B47] hover:text-[#8E5B47] pt-2"
+            className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#1E3D2F] hover:text-[#1E3D2F] pt-2"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>Create a manual quote entry</span>
@@ -253,7 +253,7 @@ export default function OrdersView() {
                       className="hover:bg-slate-50/80 cursor-pointer transition"
                     >
                       <td className="py-3.5 px-4">
-                        <span className="font-mono font-bold text-[#8E5B47] text-xs block">#{q.id}</span>
+                        <span className="font-mono font-bold text-[#1E3D2F] text-xs block">#{q.id}</span>
                         <span className="text-[11px] text-slate-400">
                           {new Date(q.createdAt || Date.now()).toLocaleDateString()}
                         </span>
@@ -277,7 +277,7 @@ export default function OrdersView() {
                         <div className="text-slate-900 font-medium">{q.detailedService || q.serviceCategory}</div>
                         <div className="flex items-center gap-1.5 mt-1">
                           {q.needsTowing && (
-                            <span className="text-[10px] bg-red-50 text-[#8E5B47] px-2 py-0.5 rounded border border-red-200 font-bold">
+                            <span className="text-[10px] bg-red-50 text-[#1E3D2F] px-2 py-0.5 rounded border border-red-200 font-bold">
                               Towing
                             </span>
                           )}
@@ -316,7 +316,7 @@ export default function OrdersView() {
                             e.stopPropagation();
                             setSelectedQuote(q);
                           }}
-                          className="py-1.5 px-3.5 rounded-xl bg-slate-50 hover:bg-red-50 hover:text-[#8E5B47] hover:border-red-200 border border-slate-200 text-xs font-bold transition text-slate-700"
+                          className="py-1.5 px-3.5 rounded-xl bg-slate-50 hover:bg-red-50 hover:text-[#1E3D2F] hover:border-red-200 border border-slate-200 text-xs font-bold transition text-slate-700"
                         >
                           {status === 'pending' ? 'Review & Quote' : 'View Details'}
                         </button>
@@ -340,7 +340,7 @@ export default function OrdersView() {
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <span className="font-mono font-bold text-[#8E5B47] text-xs">#{q.id}</span>
+                      <span className="font-mono font-bold text-[#1E3D2F] text-xs">#{q.id}</span>
                       <h4 className="font-bold text-slate-900 text-base mt-0.5">{q.name}</h4>
                     </div>
                     <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold border ${

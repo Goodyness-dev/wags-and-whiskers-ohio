@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { submitQuoteRequest } from '../../services/quoteService';
 
 export default function QuoteWizardModal({ isOpen, onClose, initialCategory, initialService }) {
@@ -11,7 +11,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
     petNamesAndBreed: '',
     petRole: 'Ring Bearer Dog',
     temperament: 'Friendly & Outgoing',
-    packageChoice: initialService || 'The Ceremony & Portraits Package',
+    packageChoice: initialService || 'The Aisle Escort & Formal Portraits',
     notes: '',
     promoApplied: true
   });
@@ -71,11 +71,11 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div 
-        className="bg-[#FAF8F5] dark:bg-[#262220] rounded-3xl max-w-xl w-full border-2 border-[#EFE6DD] dark:border-[#3D3733] shadow-2xl overflow-hidden my-8"
+        className="bg-[#FAF8F5] dark:bg-[#14251E] rounded-3xl max-w-xl w-full border border-[#E2EAE4] dark:border-[#1E382D] shadow-2xl overflow-hidden my-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-[#8E5B47] text-white p-6 sm:p-7 relative">
+        <div className="bg-[#1E3D2F] text-white p-6 sm:p-7 relative">
           <button
             onClick={handleResetAndClose}
             className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 transition text-white cursor-pointer"
@@ -85,55 +85,55 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <span className="text-xs uppercase tracking-widest text-[#F7ECE6] font-bold block mb-1">
+          <span className="text-[11px] uppercase tracking-widest text-[#A7D1BD] font-bold block mb-1">
             Wags & Whiskers • Date Reservation
           </span>
-          <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight">
             Check Your Wedding Date
           </h3>
-          <p className="text-xs sm:text-sm text-[#F7ECE6]/90 mt-1">
-            Receive a personalized timeline consultation + <strong>$50 OFF</strong> your package.
+          <p className="text-xs sm:text-sm text-[#D2E2D7] mt-1">
+            Receive a personalized timeline proposal + <strong>$50 OFF</strong> your attendant package.
           </p>
         </div>
 
         {submitted ? (
           /* Success Receipt Screen */
           <div className="p-8 text-center space-y-5">
-            <div className="w-16 h-16 rounded-full bg-[#EBF2EE] dark:bg-[#203129] text-[#5B7566] dark:text-[#A7D1BD] mx-auto flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-[#E8F0EA] dark:bg-[#1E382D] text-[#1E3D2F] dark:text-[#A7D1BD] mx-auto flex items-center justify-center">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#8E5B47] block mb-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#1E3D2F] dark:text-[#A7D1BD] block mb-1">
                 Reservation Request Received!
               </span>
-              <h4 className="text-2xl font-extrabold text-[#2B2623] dark:text-[#F5EFEB]">
+              <h4 className="font-serif text-2xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA]">
                 We're So Excited For You, {submittedData.name}!
               </h4>
-              <p className="text-sm text-[#5C534E] dark:text-[#C5BCB6] mt-2 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#5A6A61] dark:text-[#A7B8AF] mt-2 max-w-md mx-auto leading-relaxed">
                 Lacie has received your wedding date inquiry for <strong>{submittedData.weddingDate}</strong>. She will review venue logistics and confirm availability shortly with your $50 discount applied!
               </p>
             </div>
 
-            <div className="bg-white dark:bg-[#1C1917] p-5 rounded-2xl border-2 border-[#EFE6DD] dark:border-[#3D3733] text-left text-xs space-y-2 max-w-md mx-auto">
+            <div className="bg-white dark:bg-[#0D1914] p-5 rounded-2xl border border-[#E2EAE4] dark:border-[#1E382D] text-left text-xs space-y-2 max-w-md mx-auto">
               <div className="flex justify-between">
-                <span className="text-[#736760]">Package:</span>
-                <span className="font-bold text-[#2B2623] dark:text-[#F5EFEB]">{submittedData.packageChoice}</span>
+                <span className="text-[#799885]">Package:</span>
+                <span className="font-bold text-[#1E3D2F] dark:text-[#E8F0EA]">{submittedData.packageChoice}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#736760]">Pet:</span>
-                <span className="font-bold text-[#2B2623] dark:text-[#F5EFEB]">{submittedData.petNamesAndBreed}</span>
+                <span className="text-[#799885]">Pet:</span>
+                <span className="font-bold text-[#1E3D2F] dark:text-[#E8F0EA]">{submittedData.petNamesAndBreed}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#736760]">Promotion:</span>
-                <span className="font-bold text-emerald-600 dark:text-emerald-400">$50 OFF Confirmed (WEDDING50)</span>
+                <span className="text-[#799885]">Promotion:</span>
+                <span className="font-bold text-emerald-600 dark:text-emerald-400">$50 OFF Confirmed (SPRING50)</span>
               </div>
             </div>
 
             <button
               onClick={handleResetAndClose}
-              className="w-full max-w-md py-3.5 rounded-xl bg-[#8E5B47] hover:bg-[#724534] text-white font-bold text-sm transition shadow-sm cursor-pointer"
+              className="w-full max-w-md py-3.5 rounded-full bg-[#1E3D2F] hover:bg-[#152C22] text-white font-semibold text-sm transition shadow-sm cursor-pointer"
             >
               Return to Website
             </button>
@@ -150,7 +150,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
             {/* Names & Contact */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                   Bride & Groom / Your Name *
                 </label>
                 <input
@@ -163,7 +163,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                   Email Address *
                 </label>
                 <input
@@ -179,7 +179,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                   Phone Number
                 </label>
                 <input
@@ -191,7 +191,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                   Wedding / Event Date *
                 </label>
                 <input
@@ -207,7 +207,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
 
             {/* Venue Location */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                 Venue Name & City (Ohio)
               </label>
               <input
@@ -222,7 +222,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
             {/* Pet Name & Role */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                   Pet Name(s) & Breed
                 </label>
                 <input
@@ -234,7 +234,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                   Role on Wedding Day
                 </label>
                 <select
@@ -253,7 +253,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
 
             {/* Package Selection */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                 Preferred Wedding Package
               </label>
               <select
@@ -261,17 +261,19 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
                 onChange={(e) => setFormData({ ...formData, packageChoice: e.target.value })}
                 className="input-calibrated text-xs"
               >
-                <option value="The Ceremony & Portraits Package">The Ceremony & Portraits Package (2.5 – 3 hrs)</option>
-                <option value="The Full Wedding Day VIP Experience">The Full Wedding Day VIP Experience (5 – 6 hrs)</option>
-                <option value="The Rehearsal & Wedding Weekend">The Rehearsal & Wedding Weekend (2 Days)</option>
-                <option value="Daily In-Home Pet Sitting">Daily In-Home Pet Sitting & Routine Visits</option>
-                <option value="Custom Wedding Timeline">Custom Wedding Timeline Request</option>
+                <option value="The Aisle Escort & Formal Portraits">The Aisle Escort & Formal Portraits (2.5 – 3 hrs)</option>
+                <option value="The First Look & Bridal Suite Companion">The First Look & Bridal Suite Companion (3 – 4 hrs)</option>
+                <option value="The Cocktail Hour Socialite & Greeter">The Cocktail Hour Socialite & Greeter (4 – 5 hrs)</option>
+                <option value="The Full Day VIP Wedding Experience">The Full Day VIP Wedding Experience (6 – 8 hrs)</option>
+                <option value="The Rehearsal & Wedding Weekend">The Rehearsal & Wedding Weekend (2-Day Concierge)</option>
+                <option value="Chauffeured Safe Ride Home & Tuck-In">Chauffeured Safe Ride Home & Tuck-In</option>
+                <option value="Daily In-Home Pet Sitting & Routine Visits">Daily In-Home Pet Sitting & Routine Visits</option>
               </select>
             </div>
 
             {/* Temperament & Notes */}
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#473F3A] dark:text-[#D5CDC6] mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-[#465A4F] dark:text-[#A7B8AF] mb-1">
                 Pet Temperament & Special Notes
               </label>
               <textarea
@@ -284,12 +286,12 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
             </div>
 
             {/* Promo Badge Note */}
-            <div className="p-3 rounded-xl bg-[#EBF2EE] dark:bg-[#203129] border border-[#5B7566]/30 flex items-center justify-between text-xs">
-              <span className="font-bold text-[#2F4F3E] dark:text-[#A7D1BD]">
+            <div className="p-3 rounded-xl bg-[#E8F0EA] dark:bg-[#1E382D] border border-[#1E3D2F]/20 flex items-center justify-between text-xs">
+              <span className="font-bold text-[#1E3D2F] dark:text-[#A7D1BD]">
                 🎉 $50 OFF Special Promo Applied
               </span>
-              <span className="font-mono font-bold text-[#8E5B47] dark:text-[#E8A58B]">
-                WEDDING50
+              <span className="font-mono font-bold text-[#1E3D2F] dark:text-[#E8F0EA]">
+                SPRING50
               </span>
             </div>
 
@@ -297,7 +299,7 @@ export default function QuoteWizardModal({ isOpen, onClose, initialCategory, ini
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 rounded-xl bg-[#8E5B47] hover:bg-[#724534] disabled:opacity-60 text-white font-bold text-base transition shadow-sm active:scale-95 cursor-pointer text-center"
+              className="w-full py-3.5 rounded-full bg-[#1E3D2F] hover:bg-[#152C22] disabled:opacity-60 text-white font-semibold text-sm transition shadow-sm active:scale-95 cursor-pointer text-center"
             >
               {isSubmitting ? 'Checking Availability...' : 'Reserve Date & Claim $50 OFF'}
             </button>

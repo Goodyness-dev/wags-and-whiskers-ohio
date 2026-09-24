@@ -1,26 +1,30 @@
-﻿import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { BUSINESS_INFO } from '../../data/businessData';
-import { IMAGES } from '../../data/imageManifest';
 
 export default function Hero({ onOpenWizard }) {
   const headlineRef = useRef(null);
-  const badgeRef = useRef(null);
-  const imageCardRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const statsRef = useRef(null);
+  const ctaRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(badgeRef.current,
-        { opacity: 0, y: 15 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }
-      );
       gsap.fromTo(headlineRef.current,
-        { opacity: 0, y: 25 },
-        { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: 'power3.out' }
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }
       );
-      gsap.fromTo(imageCardRef.current,
-        { opacity: 0, scale: 0.96 },
-        { opacity: 1, scale: 1, duration: 1, delay: 0.3, ease: 'power2.out' }
+      gsap.fromTo(subtitleRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: 'power2.out' }
+      );
+      gsap.fromTo(ctaRef.current,
+        { opacity: 0, y: 15 },
+        { opacity: 1, y: 0, duration: 0.7, delay: 0.35, ease: 'power2.out' }
+      );
+      gsap.fromTo(statsRef.current.children,
+        { opacity: 0, y: 25 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, delay: 0.45, ease: 'power3.out' }
       );
     });
 
@@ -28,123 +32,93 @@ export default function Hero({ onOpenWizard }) {
   }, []);
 
   return (
-    <section id="hero" className="relative pt-8 sm:pt-14 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Delicate romantic champagne gradient orb */}
-      <div className="absolute top-10 left-1/3 -translate-x-1/2 w-[500px] h-[500px] bg-[#F7ECE6] dark:bg-[#38261F]/30 rounded-full blur-3xl pointer-events-none -z-10" />
+    <section id="hero" className="relative pt-12 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-[640px] lg:min-h-[720px] flex flex-col justify-between">
+      {/* Botanical Background Image with Deep Sage/Green Tint Overlay */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <img
+          src="/images/botanical-hero-backdrop.jpg"
+          alt="Lush botanical greenhouse wedding pet ambiance"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-95"
+          fetchpriority="high"
+          loading="eager"
+        />
+        {/* Soft atmospheric gradient mimicking GreenNest natural studio light */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#12261E]/95 via-[#1E3D2F]/85 to-[#2D5A46]/60 dark:from-[#08120E]/98 dark:via-[#0D1C16]/90 dark:to-[#12261E]/75" />
+        <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+      </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        {/* Left Column (5 Cols) */}
-        <div className="lg:col-span-6 space-y-6">
-          {/* Eyebrow & Promo Chip */}
-          <div ref={badgeRef} className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center space-x-1.5 bg-[#F7ECE6] dark:bg-[#3D2C24] text-[#8E5B47] dark:text-[#E8A58B] px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-              <span>🐾</span>
-              <span>Central Ohio Wedding Pet Attendant</span>
-            </span>
-            <span className="inline-flex items-center space-x-1 bg-[#EBF2EE] dark:bg-[#203129] text-[#5B7566] dark:text-[#A7D1BD] px-3 py-1.5 rounded-full text-xs font-bold">
-              <span>$50 OFF Special</span>
-            </span>
+      <div className="max-w-7xl mx-auto w-full pt-10 sm:pt-16 pb-12">
+        <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          {/* Subtle Eyebrow */}
+          <div className="inline-flex items-center space-x-2 bg-white/15 backdrop-blur-md border border-white/20 text-[#E8F0EA] px-4 py-1.5 rounded-full text-xs font-medium tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-[#A7D1BD] animate-pulse" />
+            <span>Central Ohio Wedding Pet Attendant & Day-Of Care</span>
           </div>
 
-          {/* Primary Headline */}
-          <h1 ref={headlineRef} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#2B2623] dark:text-[#F5EFEB] leading-[1.12]">
-            Your dog belongs at your wedding. <span className="text-[#8E5B47] dark:text-[#E8A58B]">We handle every detail.</span>
+          {/* Large Serif Headline matching GreenNest template */}
+          <h1
+            ref={headlineRef}
+            className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal leading-[1.12] tracking-tight"
+          >
+            Discover peaceful, <br className="hidden sm:inline" />
+            <span className="italic font-light text-[#E8F0EA]">picture-perfect</span> wedding moments with your pets
           </h1>
 
-          {/* Value Prop Description */}
-          <p className="text-base sm:text-lg text-[#5C534E] dark:text-[#C5BCB6] leading-relaxed max-w-xl">
-            From walking down the aisle and holding treats for your photographer to potty breaks, greeting guests, and a chauffeured ride home—Lacie handles your pet's complete care so you and your loved ones can celebrate completely stress-free.
+          {/* Subtitle */}
+          <p
+            ref={subtitleRef}
+            className="text-base sm:text-lg text-[#D2E2D7] font-light leading-relaxed max-w-xl"
+          >
+            14+ years of professional animal care. Lacie Kern ensures your dog's aisle escort, photographer handling, hydration, and chauffeured safe ride home are completely stress-free.
           </p>
 
-          {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+          {/* CTAs matching GreenNest Button Aesthetics */}
+          <div ref={ctaRef} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
             <button
               onClick={() => onOpenWizard('Wedding Attendant', 'Ceremony & Portraits ($50 OFF)')}
-              className="px-8 py-4 rounded-2xl bg-[#8E5B47] hover:bg-[#724534] text-white font-bold text-base transition shadow-wedding hover:shadow-wedding-lg active:scale-95 text-center flex items-center justify-center space-x-2.5 cursor-pointer"
+              className="px-8 py-3.5 rounded-full bg-[#0E2019] hover:bg-black text-white font-medium text-sm sm:text-base transition shadow-lg active:scale-95 text-center flex items-center justify-center space-x-2.5 cursor-pointer border border-white/10"
             >
-              <span>Check Your Wedding Date</span>
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <span>Check Date & Lock $50 Off</span>
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </button>
+
             <a
-              href="#services"
-              className="px-7 py-4 rounded-2xl bg-white dark:bg-[#262220] border-2 border-[#EFE6DD] dark:border-[#3D3733] text-[#2B2623] dark:text-[#F5EFEB] hover:border-[#8E5B47] dark:hover:border-[#8E5B47] font-bold text-base transition text-center shadow-xs active:scale-95"
+              href="#why-us"
+              className="px-7 py-3.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white font-medium text-sm sm:text-base transition text-center flex items-center justify-center space-x-2 active:scale-95"
             >
-              View Packages
+              {/* Play / Explore Circle */}
+              <span className="w-5 h-5 rounded-full bg-white/30 flex items-center justify-center">
+                <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+              <span>Why Choose Lacie</span>
             </a>
           </div>
-
-          {/* Proof Strip */}
-          <div className="pt-4 border-t border-[#EFE6DD] dark:border-[#3D3733] grid grid-cols-3 gap-4">
-            <div>
-              <span className="text-2xl font-extrabold text-[#2B2623] dark:text-[#F5EFEB] block">14+</span>
-              <span className="text-xs text-[#736760] dark:text-[#A89F99] font-medium">Years Experience</span>
-            </div>
-            <div>
-              <span className="text-2xl font-extrabold text-[#8E5B47] dark:text-[#E8A58B] block">$50 OFF</span>
-              <span className="text-xs text-[#736760] dark:text-[#A89F99] font-medium">Promo Available</span>
-            </div>
-            <div>
-              <span className="text-2xl font-extrabold text-[#2B2623] dark:text-[#F5EFEB] block">100%</span>
-              <span className="text-xs text-[#736760] dark:text-[#A89F99] font-medium">Safe Ride Home</span>
-            </div>
-          </div>
         </div>
+      </div>
 
-        {/* Right Column (7 Cols) - Large Photography with Tactile Badges */}
-        <div ref={imageCardRef} className="lg:col-span-6 relative">
-          <div className="relative rounded-3xl overflow-hidden card-thick border-4 border-white dark:border-[#262220] shadow-wedding-lg">
-            <img
-              src={IMAGES.hero.src}
-              alt={IMAGES.hero.alt}
-              className="w-full h-[430px] sm:h-[520px] object-cover object-center"
-              loading="eager"
-              fetchpriority="high"
-            />
-            {/* Soft subtle photo gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-            {/* Bottom Photo Caption */}
-            <div className="absolute bottom-5 left-5 right-5 text-white">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#F7ECE6] block mb-1">
-                Central Ohio Weddings
+      {/* The 4 Frosted Glass Stat Cards (Exact 1:1 match to GreenNest template bottom bar) */}
+      <div className="max-w-7xl mx-auto w-full pt-6">
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+          {BUSINESS_INFO.stats.map((stat, i) => (
+            <div
+              key={i}
+              className="bg-white/80 dark:bg-[#14251E]/80 backdrop-blur-md border border-white/60 dark:border-white/10 rounded-2xl p-4 sm:p-5 text-center shadow-frosted hover:-translate-y-1 transition duration-300"
+            >
+              <span className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] block">
+                {stat.value}
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold leading-tight">
-                No family member left behind on your big day.
-              </h3>
-            </div>
-          </div>
-
-          {/* Floating Pill 1: Safe Ride Home Guarantee */}
-          <div className="absolute -top-4 -right-3 sm:-right-6 bg-white dark:bg-[#262220] border-2 border-[#EFE6DD] dark:border-[#3D3733] rounded-2xl p-3 sm:p-4 shadow-wedding flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#EBF2EE] dark:bg-[#203129] text-[#5B7566] dark:text-[#A7D1BD] flex items-center justify-center font-bold">
-              🚗
-            </div>
-            <div>
-              <span className="text-xs font-bold text-[#2B2623] dark:text-[#F5EFEB] block leading-tight">
-                Safe Ride Home
+              <span className="text-xs sm:text-sm font-semibold text-[#242826] dark:text-[#C5D8CC] block mt-0.5">
+                {stat.label}
               </span>
-              <span className="text-[11px] text-[#736760] dark:text-[#A89F99]">
-                Pet taxi back to house/hotel
+              <span className="text-[11px] text-[#799885] dark:text-[#8EAFA0] block mt-0.5">
+                {stat.detail}
               </span>
             </div>
-          </div>
-
-          {/* Floating Pill 2: 14+ Years Trust */}
-          <div className="absolute -bottom-5 -left-3 sm:-left-6 bg-white dark:bg-[#262220] border-2 border-[#EFE6DD] dark:border-[#3D3733] rounded-2xl p-3 sm:p-4 shadow-wedding flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#F7ECE6] dark:bg-[#3D2C24] text-[#8E5B47] dark:text-[#E8A58B] flex items-center justify-center font-bold">
-              💍
-            </div>
-            <div>
-              <span className="text-xs font-bold text-[#2B2623] dark:text-[#F5EFEB] block leading-tight">
-                Aisle & Photo Pro
-              </span>
-              <span className="text-[11px] text-[#736760] dark:text-[#A89F99]">
-                14+ yrs pet sitting experience
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

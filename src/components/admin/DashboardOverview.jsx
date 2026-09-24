@@ -73,7 +73,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
         <div className="flex items-center space-x-2.5">
           <button
             onClick={onOpenNewOrder}
-            className="py-2.5 px-4 bg-[#8E5B47] hover:bg-[#724534] text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md shadow-[#8E5B47]/20 flex items-center space-x-2 active:scale-95 cursor-pointer"
+            className="py-2.5 px-4 bg-[#1E3D2F] hover:bg-[#152C22] text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md shadow-[#1E3D2F]/20 flex items-center space-x-2 active:scale-95 cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>+ New Booking</span>
@@ -95,7 +95,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
         {/* Card 1: Solid Shop Red Fill (Matches Donezo Hero Card) */}
         <div 
           onClick={() => onNavigateTab('orders')}
-          className="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-3xl p-6 shadow-lg shadow-[#8E5B47]/20 cursor-pointer transition hover:scale-[1.01] flex flex-col justify-between"
+          className="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-3xl p-6 shadow-lg shadow-[#1E3D2F]/20 cursor-pointer transition hover:scale-[1.01] flex flex-col justify-between"
         >
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-red-100">Total Repair Orders</span>
@@ -199,7 +199,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
             ].map((bar, idx) => (
               <div key={idx} className="flex-1 flex flex-col items-center h-full justify-end group relative">
                 {bar.highlight && (
-                  <span className="absolute -top-7 text-[10px] font-bold text-[#8E5B47] bg-red-50 border border-red-200 px-1.5 py-0.5 rounded-full shadow-xs">
+                  <span className="absolute -top-7 text-[10px] font-bold text-[#1E3D2F] bg-red-50 border border-red-200 px-1.5 py-0.5 rounded-full shadow-xs">
                     {bar.highlight}
                   </span>
                 )}
@@ -218,7 +218,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
 
           <div className="flex items-center justify-center space-x-6 pt-4 border-t border-slate-100 mt-2 text-xs">
             <span className="flex items-center space-x-2 text-slate-600">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#8E5B47]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#1E3D2F]" />
               <span>Completed Jobs</span>
             </span>
             <span className="flex items-center space-x-2 text-slate-400">
@@ -241,7 +241,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
                 <h4 className="text-base font-black font-heading text-slate-900 leading-tight">
                   {urgentOrder.make} {urgentOrder.modelAndYear}
                 </h4>
-                <div className="text-xs text-[#8E5B47] font-bold">
+                <div className="text-xs text-[#1E3D2F] font-bold">
                   {urgentOrder.detailedService || urgentOrder.serviceCategory}
                 </div>
                 <p className="text-xs text-slate-500 line-clamp-2 mt-1">
@@ -259,7 +259,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
 
           <button
             onClick={() => urgentOrder && onSelectQuote(urgentOrder)}
-            className="w-full mt-4 py-3 px-4 bg-[#8E5B47] hover:bg-[#724534] text-white font-bold text-xs rounded-2xl transition shadow-md shadow-[#8E5B47]/20 flex items-center justify-center space-x-2"
+            className="w-full mt-4 py-3 px-4 bg-[#1E3D2F] hover:bg-[#152C22] text-white font-bold text-xs rounded-2xl transition shadow-md shadow-[#1E3D2F]/20 flex items-center justify-center space-x-2"
           >
             <Wrench className="w-4 h-4" />
             <span>Open Work Order</span>
@@ -274,7 +274,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
             </h3>
             <button
               onClick={onOpenNewOrder}
-              className="text-xs font-bold text-[#8E5B47] hover:text-[#8E5B47] flex items-center space-x-1 bg-red-50 px-2 py-1 rounded-lg"
+              className="text-xs font-bold text-[#1E3D2F] hover:text-[#1E3D2F] flex items-center space-x-1 bg-red-50 px-2 py-1 rounded-lg"
             >
               <Plus className="w-3 h-3" />
               <span>New</span>
@@ -310,7 +310,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
 
           <button
             onClick={() => onNavigateTab('orders')}
-            className="w-full text-center text-xs font-bold text-[#8E5B47] hover:text-[#8E5B47] pt-3 border-t border-slate-100 mt-2 flex items-center justify-center space-x-1"
+            className="w-full text-center text-xs font-bold text-[#1E3D2F] hover:text-[#1E3D2F] pt-3 border-t border-slate-100 mt-2 flex items-center justify-center space-x-1"
           >
             <span>View all {quotes.length} repair orders</span>
             <ChevronRight className="w-3.5 h-3.5" />
@@ -330,7 +330,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
             </h3>
             <button
               onClick={() => onNavigateTab('inbox')}
-              className="text-xs font-bold text-slate-600 hover:text-[#8E5B47] flex items-center space-x-1 border border-slate-200 px-2.5 py-1 rounded-xl"
+              className="text-xs font-bold text-slate-600 hover:text-[#1E3D2F] flex items-center space-x-1 border border-slate-200 px-2.5 py-1 rounded-xl"
             >
               <span>Open Inbox</span>
             </button>
@@ -346,7 +346,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
                   className="p-3 bg-slate-50/70 hover:bg-slate-100/80 border border-slate-100 rounded-2xl flex items-center justify-between transition cursor-pointer"
                 >
                   <div className="flex items-center space-x-3 min-w-0">
-                    <div className="w-9 h-9 rounded-xl bg-red-100 text-[#8E5B47] font-bold text-xs flex items-center justify-center shrink-0">
+                    <div className="w-9 h-9 rounded-xl bg-red-100 text-[#1E3D2F] font-bold text-xs flex items-center justify-center shrink-0">
                       {initials}
                     </div>
                     <div className="min-w-0">
@@ -402,7 +402,7 @@ export default function DashboardOverview({ onNavigateTab, onSelectQuote, onOpen
 
           <div className="flex items-center justify-between text-[11px] text-slate-500 pt-3 border-t border-slate-100">
             <span className="flex items-center space-x-1">
-              <span className="w-2 h-2 rounded-full bg-[#8E5B47]" />
+              <span className="w-2 h-2 rounded-full bg-[#1E3D2F]" />
               <span>Completed</span>
             </span>
             <span className="flex items-center space-x-1">

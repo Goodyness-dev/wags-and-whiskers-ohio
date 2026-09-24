@@ -1,88 +1,59 @@
-﻿import React from 'react';
+import React from 'react';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function ReviewsSection({ onOpenWizard }) {
-  const reviews = [
-    {
-      id: 1,
-      author: "Brianna & Tyler M.",
-      location: "Wedding in Dublin, OH",
-      pet: "Golden Retriever (Winston)",
-      role: "Bride & Groom",
-      text: "Hiring Lacie was hands down the best vendor decision we made. Winston walked down the aisle with our ring bearer, looked directly at the camera with her squeakers, and she had him tucked in safely at home before dinner. Zero stress!",
-      date: "August 2026"
-    },
-    {
-      id: 2,
-      author: "Jessica & Cole R.",
-      location: "Wedding in New Albany, OH",
-      pet: "Rescue Beagle Mix (Penny)",
-      role: "Bride",
-      text: "Penny is super shy around loud noise. Lacie came early to bond with her, kept her comfortable away from the speakers, and administered her evening eye drops right on schedule. The photo of Penny with my bridal bouquet is my favorite photo of the entire wedding.",
-      date: "August 2026"
-    },
-    {
-      id: 3,
-      author: "Megan & David S.",
-      location: "Wedding in Westerville, OH",
-      pet: "Australian Shepherd (Milo)",
-      role: "Bride & Groom",
-      text: "Our families were so grateful they didn't have to leave the reception early to take Milo home. Lacie handled the ceremony walk, cocktail hour greetings without a single dress jump, and drove him home safely. Total lifesaver!",
-      date: "July 2026"
-    }
-  ];
-
   return (
-    <section id="reviews" className="py-16 sm:py-24 bg-[#F5EFEB] dark:bg-[#262220] transition-colors">
+    <section id="reviews" className="py-20 sm:py-28 bg-[#FAF8F5] dark:bg-[#0D1914] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center space-x-2 bg-[#F7ECE6] dark:bg-[#3D2C24] px-4 py-1.5 rounded-full text-xs font-bold text-[#8E5B47] dark:text-[#E8A58B] mb-3">
-            <span>💍</span>
-            <span>Ohio Wedding Couples & Vendors</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#2B2623] dark:text-[#F5EFEB] tracking-tight">
-            Loved by Central Ohio Couples
+        
+        {/* Centered Heading in Serif matching GreenNest */}
+        <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E3D2F] dark:text-[#E8F0EA] tracking-tight">
+            Our Happy Brides & Couples Say It Best
           </h2>
-          <p className="text-base sm:text-lg text-[#5C534E] dark:text-[#C5BCB6] mt-4 leading-relaxed">
-            Real feedback from brides and grooms who included their furry family members without missing a single moment of celebration.
+          <p className="font-sans text-sm sm:text-base text-[#799885] dark:text-[#8EAFA0] mt-3 italic">
+            Verified reviews from Central Ohio brides and pet parents.
           </p>
         </div>
 
-        {/* Reviews Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reviews.map((rev) => (
+        {/* 2 Wide Side-by-Side Cards (Exact Match to GreenNest Testimonials) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {BUSINESS_INFO.reviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-white dark:bg-[#1C1917] p-8 rounded-3xl border-2 border-[#EFE6DD] dark:border-[#3D3733] flex flex-col justify-between card-thick-hover"
+              className="bg-[#F5F7F5] dark:bg-[#14251E] rounded-3xl border border-[#E2EAE4] dark:border-[#1E382D] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-sm hover:shadow-md transition duration-300"
             >
-              <div>
-                {/* Proof Stars */}
-                <div className="flex items-center space-x-1 text-[#8E5B47] dark:text-[#E8A58B] mb-4">
+              {/* Left Photo of Bride / Pet Parent */}
+              <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shrink-0 border border-[#E2EAE4] dark:border-[#1E382D] bg-white dark:bg-[#0D1914]">
+                <img
+                  src={rev.image}
+                  alt={rev.name}
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Right Review Content */}
+              <div className="space-y-3 text-center sm:text-left">
+                {/* 5 Gold Stars */}
+                <div className="flex items-center justify-center sm:justify-start space-x-1 text-amber-500 text-sm">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <span key={i}>★</span>
                   ))}
                 </div>
 
-                <p className="text-[#473F3A] dark:text-[#D5CDC6] text-sm sm:text-base leading-relaxed italic mb-6">
-                  "{rev.text}"
+                {/* Review Quote */}
+                <p className="text-xs sm:text-sm text-[#465A4F] dark:text-[#C5D8CC] leading-relaxed italic">
+                  "{rev.quote}"
                 </p>
-              </div>
 
-              <div className="pt-4 border-t border-[#EFE6DD] dark:border-[#3D3733]">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="font-bold text-sm text-[#2B2623] dark:text-[#F5EFEB]">
-                      {rev.author}
-                    </h4>
-                    <span className="text-xs text-[#736760] dark:text-[#A89F99] block">
-                      {rev.location} • {rev.pet}
-                    </span>
-                  </div>
-                  <span className="text-[11px] font-mono text-[#8E5B47] dark:text-[#E8A58B]">
-                    {rev.date}
+                {/* Author Info */}
+                <div className="pt-1">
+                  <h4 className="font-serif font-bold text-sm sm:text-base text-[#1E3D2F] dark:text-[#E8F0EA]">
+                    {rev.name}
+                  </h4>
+                  <span className="text-[11px] text-[#799885] dark:text-[#8EAFA0] block font-medium">
+                    {rev.role} · {rev.venue}
                   </span>
                 </div>
               </div>
@@ -90,20 +61,21 @@ export default function ReviewsSection({ onOpenWizard }) {
           ))}
         </div>
 
-        {/* Social Proof Outbound Link */}
+        {/* Proof Link to Ohio Wedding Couples & Vendors Facebook Group */}
         <div className="mt-12 text-center">
           <a
-            href={BUSINESS_INFO.social.facebookPage}
+            href={BUSINESS_INFO.social.vendorGroup}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-sm font-bold text-[#8E5B47] dark:text-[#E8A58B] hover:underline bg-white dark:bg-[#1C1917] px-6 py-3 rounded-2xl border border-[#EFE6DD] dark:border-[#3D3733] shadow-xs"
+            className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-[#1E3D2F] dark:text-[#A7D1BD] hover:underline"
           >
-            <span>Connect with Lacie on Facebook</span>
+            <span>Verified active vendor on OHIO wedding couples & vendors group</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </a>
         </div>
+
       </div>
     </section>
   );

@@ -96,12 +96,12 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
         {/* Modal Header */}
         <div className="px-6 py-5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4 bg-white">
           <div className="flex items-center space-x-3">
-            <div className="w-11 h-11 rounded-2xl bg-red-50 border border-red-200 flex items-center justify-center text-[#8E5B47] shadow-xs">
+            <div className="w-11 h-11 rounded-2xl bg-red-50 border border-red-200 flex items-center justify-center text-[#1E3D2F] shadow-xs">
               <Wrench className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="font-mono text-xs font-bold text-[#8E5B47] bg-red-50 px-2.5 py-0.5 rounded-md border border-red-200">
+                <span className="font-mono text-xs font-bold text-[#1E3D2F] bg-red-50 px-2.5 py-0.5 rounded-md border border-red-200">
                   #{quote.id}
                 </span>
                 <span className="text-xs text-slate-400">
@@ -150,7 +150,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
             href={`tel:${quote.phone?.replace(/[^0-9]/g, '')}`}
             className="flex items-center space-x-1.5 hover:text-slate-900 text-slate-700 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-2xs transition"
           >
-            <Phone className="w-3.5 h-3.5 text-[#8E5B47]" />
+            <Phone className="w-3.5 h-3.5 text-[#1E3D2F]" />
             <span className="font-semibold">{quote.phone || 'No Phone'}</span>
             <ArrowUpRight className="w-3 h-3 text-slate-400" />
           </a>
@@ -159,7 +159,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
             href={`mailto:${quote.email}`}
             className="flex items-center space-x-1.5 hover:text-slate-900 text-slate-700 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-2xs transition"
           >
-            <Mail className="w-3.5 h-3.5 text-[#8E5B47]" />
+            <Mail className="w-3.5 h-3.5 text-[#1E3D2F]" />
             <span className="font-semibold">{quote.email}</span>
             <ArrowUpRight className="w-3 h-3 text-slate-400" />
           </a>
@@ -172,7 +172,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
           )}
 
           {quote.needsTowing && (
-            <span className="bg-red-50 text-[#8E5B47] border border-red-200 px-2.5 py-0.5 rounded-full font-bold text-[11px] flex items-center space-x-1">
+            <span className="bg-red-50 text-[#1E3D2F] border border-red-200 px-2.5 py-0.5 rounded-full font-bold text-[11px] flex items-center space-x-1">
               <Truck className="w-3 h-3" />
               <span>Towing Needed</span>
             </span>
@@ -192,11 +192,11 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
             onClick={() => setActiveTab('quote_studio')}
             className={`py-3.5 px-4 font-bold text-xs sm:text-sm border-b-2 transition flex items-center space-x-2 ${
               activeTab === 'quote_studio'
-                ? 'border-red-600 text-[#8E5B47]'
+                ? 'border-red-600 text-[#1E3D2F]'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
-            <Send className="w-4 h-4 text-[#8E5B47]" />
+            <Send className="w-4 h-4 text-[#1E3D2F]" />
             <span>Send Quote to Customer</span>
           </button>
           <button
@@ -243,7 +243,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
               {/* Error Banner */}
               {sendError && (
                 <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-sm flex items-center space-x-3">
-                  <AlertCircle className="w-5 h-5 text-[#8E5B47] shrink-0" />
+                  <AlertCircle className="w-5 h-5 text-[#1E3D2F] shrink-0" />
                   <span>{sendError}</span>
                 </div>
               )}
@@ -253,7 +253,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                      Total Quoted Price ($ USD) <span className="text-[#8E5B47]">*</span>
+                      Total Quoted Price ($ USD) <span className="text-[#1E3D2F]">*</span>
                     </label>
                     <div className="relative">
                       <DollarSign className="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -330,7 +330,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
                   <button
                     type="submit"
                     disabled={isSendingQuote}
-                    className="w-full sm:w-auto py-3 px-6 bg-[#8E5B47] hover:bg-[#8E5B47]Hover disabled:opacity-50 text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md shadow-shop-red/20 flex items-center justify-center space-x-2 active:scale-95 cursor-pointer"
+                    className="w-full sm:w-auto py-3 px-6 bg-[#1E3D2F] hover:bg-[#1E3D2F]Hover disabled:opacity-50 text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md shadow-shop-red/20 flex items-center justify-center space-x-2 active:scale-95 cursor-pointer"
                   >
                     {isSendingQuote ? (
                       <>
@@ -408,7 +408,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
                   </div>
                   <div className="flex justify-between text-sm border-b border-slate-100 pb-2">
                     <span className="text-slate-500">Towing Needed:</span>
-                    <span className={quote.needsTowing ? 'text-[#8E5B47] font-bold' : 'text-slate-500'}>
+                    <span className={quote.needsTowing ? 'text-[#1E3D2F] font-bold' : 'text-slate-500'}>
                       {quote.needsTowing ? 'Yes' : 'No'}
                     </span>
                   </div>
@@ -432,7 +432,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
               {/* Custom Issue Description if applicable */}
               {quote.customIssue && quote.customIssue !== 'N/A' && (
                 <div className="bg-red-50/50 border border-red-200 rounded-2xl p-5 space-y-2">
-                  <span className="text-xs font-bold text-[#8E5B47] uppercase tracking-wider block">Custom Issue Explanation</span>
+                  <span className="text-xs font-bold text-[#1E3D2F] uppercase tracking-wider block">Custom Issue Explanation</span>
                   <p className="text-sm text-slate-800 leading-relaxed whitespace-pre-wrap">{quote.customIssue}</p>
                 </div>
               )}
@@ -443,7 +443,7 @@ export default function QuoteDetailModal({ quote, onClose, onUpdate }) {
                   type="button"
                   onClick={handleDelete}
                   disabled={isDeleting}
-                  className="px-4 py-2 text-xs text-[#8E5B47] hover:text-[#8E5B47] hover:bg-red-50 rounded-xl transition flex items-center space-x-1.5 border border-red-200"
+                  className="px-4 py-2 text-xs text-[#1E3D2F] hover:text-[#1E3D2F] hover:bg-red-50 rounded-xl transition flex items-center space-x-1.5 border border-red-200"
                 >
                   <Trash2 className="w-4 h-4" />
                   <span>{isDeleting ? 'Deleting...' : 'Delete Quote'}</span>

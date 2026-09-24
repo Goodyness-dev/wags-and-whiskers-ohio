@@ -142,7 +142,7 @@ export default function AdminSettings() {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-slate-400 space-y-3">
-        <Loader2 className="w-8 h-8 animate-spin text-[#8E5B47]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#1E3D2F]" />
         <span className="text-sm font-medium">Loading shop configurations...</span>
       </div>
     );
@@ -160,7 +160,7 @@ export default function AdminSettings() {
 
       {saveError && (
         <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-sm flex items-center space-x-3 shadow-xs">
-          <AlertCircle className="w-5 h-5 text-[#8E5B47] shrink-0" />
+          <AlertCircle className="w-5 h-5 text-[#1E3D2F] shrink-0" />
           <span>{saveError}</span>
         </div>
       )}
@@ -185,7 +185,7 @@ export default function AdminSettings() {
               type="checkbox"
               checked={Boolean(settings.telegram_enabled)}
               onChange={(e) => setSettings({ ...settings, telegram_enabled: e.target.checked })}
-              className="w-4 h-4 text-[#8E5B47] rounded bg-white border-slate-300 focus:ring-red-600"
+              className="w-4 h-4 text-[#1E3D2F] rounded bg-white border-slate-300 focus:ring-red-600"
             />
             <span className="text-xs font-bold text-slate-900">Enable Telegram Alerts</span>
           </label>
@@ -216,7 +216,7 @@ export default function AdminSettings() {
                 value={settings.telegram_bot_token || ''}
                 onChange={(e) => setSettings({ ...settings, telegram_bot_token: e.target.value })}
                 placeholder="e.g. 7123456789:AAH..."
-                className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
               />
               <button
                 type="button"
@@ -237,7 +237,7 @@ export default function AdminSettings() {
               value={settings.telegram_chat_id || ''}
               onChange={(e) => setSettings({ ...settings, telegram_chat_id: e.target.value })}
               placeholder="e.g. 123456789"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
           </div>
         </div>
@@ -251,9 +251,9 @@ export default function AdminSettings() {
             className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold text-xs flex items-center space-x-2 transition active:scale-95 disabled:opacity-50"
           >
             {isTestingTelegram ? (
-              <><Loader2 className="w-4 h-4 animate-spin text-[#8E5B47]" /><span>Sending Test Ping...</span></>
+              <><Loader2 className="w-4 h-4 animate-spin text-[#1E3D2F]" /><span>Sending Test Ping...</span></>
             ) : (
-              <><Send className="w-4 h-4 text-[#8E5B47]" /><span>Test Telegram Connection</span></>
+              <><Send className="w-4 h-4 text-[#1E3D2F]" /><span>Test Telegram Connection</span></>
             )}
           </button>
 
@@ -261,7 +261,7 @@ export default function AdminSettings() {
             <div className={`text-xs px-3.5 py-2 rounded-xl flex items-center space-x-2 ${
               telegramTestResult.success ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-red-50 text-red-800 border border-red-200'
             }`}>
-              {telegramTestResult.success ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <AlertCircle className="w-4 h-4 text-[#8E5B47]" />}
+              {telegramTestResult.success ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <AlertCircle className="w-4 h-4 text-[#1E3D2F]" />}
               <span>{telegramTestResult.message || telegramTestResult.error}</span>
             </div>
           )}
@@ -293,7 +293,7 @@ export default function AdminSettings() {
               value={settings.emailjs_service_id || ''}
               onChange={(e) => setSettings({ ...settings, emailjs_service_id: e.target.value })}
               placeholder="e.g. service_xxxxxx"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
           </div>
 
@@ -306,7 +306,7 @@ export default function AdminSettings() {
               value={settings.emailjs_public_key || ''}
               onChange={(e) => setSettings({ ...settings, emailjs_public_key: e.target.value })}
               placeholder="e.g. user_xxxxxxxxx"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none font-mono transition"
             />
           </div>
 
@@ -350,7 +350,7 @@ export default function AdminSettings() {
               value={testEmailAddress}
               onChange={(e) => setTestEmailAddress(e.target.value)}
               placeholder="your-email@example.com"
-              className="flex-1 bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition"
+              className="flex-1 bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition"
             />
             <button
               type="button"
@@ -359,9 +359,9 @@ export default function AdminSettings() {
               className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold text-xs flex items-center space-x-2 transition shrink-0"
             >
               {isTestingEmail ? (
-                <><Loader2 className="w-4 h-4 animate-spin text-[#8E5B47]" /><span>Sending...</span></>
+                <><Loader2 className="w-4 h-4 animate-spin text-[#1E3D2F]" /><span>Sending...</span></>
               ) : (
-                <><Mail className="w-4 h-4 text-[#8E5B47]" /><span>Send Test Quote Email</span></>
+                <><Mail className="w-4 h-4 text-[#1E3D2F]" /><span>Send Test Quote Email</span></>
               )}
             </button>
           </div>
@@ -370,7 +370,7 @@ export default function AdminSettings() {
             <div className={`text-xs p-3 rounded-xl flex items-center space-x-2 ${
               emailTestResult.success ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-red-50 text-red-800 border border-red-200'
             }`}>
-              {emailTestResult.success ? <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> : <AlertCircle className="w-4 h-4 text-[#8E5B47] shrink-0" />}
+              {emailTestResult.success ? <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> : <AlertCircle className="w-4 h-4 text-[#1E3D2F] shrink-0" />}
               <span>{emailTestResult.message || emailTestResult.error}</span>
             </div>
           )}
@@ -398,7 +398,7 @@ export default function AdminSettings() {
               type="text"
               value={settings.shop_phone || ''}
               onChange={(e) => setSettings({ ...settings, shop_phone: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
@@ -408,7 +408,7 @@ export default function AdminSettings() {
               type="email"
               value={settings.shop_email || ''}
               onChange={(e) => setSettings({ ...settings, shop_email: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
@@ -418,7 +418,7 @@ export default function AdminSettings() {
               type="text"
               value={settings.shop_address || ''}
               onChange={(e) => setSettings({ ...settings, shop_address: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
@@ -428,7 +428,7 @@ export default function AdminSettings() {
               type="text"
               value={settings.default_warranty || ''}
               onChange={(e) => setSettings({ ...settings, default_warranty: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
             />
           </div>
 
@@ -438,7 +438,7 @@ export default function AdminSettings() {
               rows={3}
               value={settings.default_quote_notes || ''}
               onChange={(e) => setSettings({ ...settings, default_quote_notes: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl p-4 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl p-4 text-sm text-slate-900 outline-none transition"
             />
           </div>
         </div>
@@ -449,7 +449,7 @@ export default function AdminSettings() {
             type="button"
             onClick={handleSaveSettings}
             disabled={isSaving}
-            className="py-3.5 px-8 bg-[#8E5B47] hover:bg-[#724534] disabled:opacity-50 text-white font-bold text-sm rounded-xl transition shadow-md shadow-red-600/20 flex items-center space-x-2 active:scale-95 cursor-pointer"
+            className="py-3.5 px-8 bg-[#1E3D2F] hover:bg-[#152C22] disabled:opacity-50 text-white font-bold text-sm rounded-xl transition shadow-md shadow-red-600/20 flex items-center space-x-2 active:scale-95 cursor-pointer"
           >
             {isSaving ? (
               <><Loader2 className="w-4 h-4 animate-spin" /><span>Saving Changes...</span></>
@@ -464,7 +464,7 @@ export default function AdminSettings() {
       <div className="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xs space-y-6">
         <div className="border-b border-slate-100 pb-5">
           <div className="flex items-center space-x-2.5">
-            <Key className="w-5 h-5 text-[#8E5B47]" />
+            <Key className="w-5 h-5 text-[#1E3D2F]" />
             <h2 className="text-xl sm:text-2xl font-black font-heading text-slate-900">
               Change Admin Password
             </h2>
@@ -483,7 +483,7 @@ export default function AdminSettings() {
 
         {passError && (
           <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs sm:text-sm flex items-center space-x-2">
-            <AlertCircle className="w-4 h-4 text-[#8E5B47] shrink-0" />
+            <AlertCircle className="w-4 h-4 text-[#1E3D2F] shrink-0" />
             <span>{passError}</span>
           </div>
         )}
@@ -508,7 +508,7 @@ export default function AdminSettings() {
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               placeholder="Minimum 6 characters"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
               required
             />
           </div>
@@ -520,7 +520,7 @@ export default function AdminSettings() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Re-type new password"
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition"
               required
             />
           </div>
@@ -531,9 +531,9 @@ export default function AdminSettings() {
             className="py-3 px-6 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-bold text-xs rounded-xl transition flex items-center space-x-2 active:scale-95"
           >
             {isChangingPass ? (
-              <><Loader2 className="w-4 h-4 animate-spin text-[#8E5B47]" /><span>Updating Password...</span></>
+              <><Loader2 className="w-4 h-4 animate-spin text-[#1E3D2F]" /><span>Updating Password...</span></>
             ) : (
-              <><Lock className="w-4 h-4 text-[#8E5B47]" /><span>Update Private Password</span></>
+              <><Lock className="w-4 h-4 text-[#1E3D2F]" /><span>Update Private Password</span></>
             )}
           </button>
         </form>

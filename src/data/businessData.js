@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Business Ground Truth for Wags and Whiskers (Central Ohio Wedding Pet Attendant)
  */
 
@@ -6,7 +6,7 @@ export const BUSINESS_INFO = {
   name: "Wags and Whiskers",
   legalName: "Wags and Whiskers Pet Care Services",
   tagline: "Central Ohio Wedding Pet Attendant Services",
-  headline: "Your dog belongs at your wedding. We handle every detail.",
+  headline: "Discover peaceful, picture-perfect wedding moments with your pets.",
   owner: {
     name: "Lacie Kern",
     title: "Owner & Lead Wedding Pet Attendant",
@@ -32,10 +32,10 @@ export const BUSINESS_INFO = {
     travelNote: "Available throughout Ohio for weddings with travel arrangements."
   },
   specialOffer: {
-    badge: "Limited Wedding Offer",
-    title: "$50 OFF Wedding Pet Attendant Services",
-    description: "Reserve your wedding date today and receive $50 off your package. Perfect for upcoming brides looking to include their pup seamlessly.",
-    code: "WEDDING50"
+    badge: "15% / $50 OFF SPECIAL",
+    title: "Spring Into Wedding Season — $50 Off Any Attendant Package!",
+    description: "Reserve your 2026 wedding date with Lacie Kern to lock in current rates with zero 2027 increases, plus receive an instant $50 booking voucher for Central Ohio brides.",
+    code: "SPRING50"
   },
   social: {
     facebookPage: "https://web.facebook.com/profile.php?id=61592029172403",
@@ -45,7 +45,7 @@ export const BUSINESS_INFO = {
     vendorGroupName: "OHIO wedding couples & vendors"
   },
   contact: {
-    phone: "(614) 937-2810", // Primary representative contact point
+    phone: "(614) 937-2810",
     email: "laciekern.wags@gmail.com",
     messenger: "https://m.me/61592029172403",
     responseTime: "Typically replies within 1–2 hours"
@@ -55,10 +55,66 @@ export const BUSINESS_INFO = {
     inquiries: "Monday – Sunday: 8:00 AM – 8:00 PM"
   },
   stats: [
-    { value: "14+", label: "Years Pet Experience" },
-    { value: "100%", label: "Worry-Free Celebrations" },
-    { value: "50+", label: "Ohio Venues Served" },
-    { value: "$50", label: "Off Current Booking Special" }
+    { value: "14+", label: "Years Experience", detail: "Professional animal care" },
+    { value: "100%", label: "Worry-Free", detail: "Stress-free day guaranteed" },
+    { value: "50+", label: "Ohio Venues", detail: "Barns, estates & gardens" },
+    { value: "5.0 ★", label: "Bridal Rating", detail: "5-Star client feedback" }
+  ],
+  reviews: [
+    {
+      id: 1,
+      name: "Sarah & Murphy",
+      role: "Bride & Groom",
+      venue: "The Estate at New Albany",
+      rating: 5,
+      date: "Spring Wedding",
+      image: "/images/bride-dog-portrait.jpg",
+      quote: "Having Lacie at our wedding was genuinely the best decision we made! Our Golden Retriever Murphy walked down the aisle as our ring bearer, posed patiently for photos, and was tucked in asleep at home before dinner."
+    },
+    {
+      id: 2,
+      name: "Emily & Bailey",
+      role: "Bride & Pup Mom",
+      venue: "Franklin Park Conservatory",
+      rating: 5,
+      date: "Garden Ceremony",
+      image: "/images/wedding-dog-centerpiece.jpg",
+      quote: "We couldn't imagine our wedding without Bailey, but didn't want our bridesmaids stuck babysitting. Lacie was calm, loving, and completely took charge with treats and squeakers. 10/10 recommend to every Ohio bride!"
+    }
+  ],
+  blogPosts: [
+    {
+      id: 1,
+      title: "Top 7 Dog-Friendly Wedding Venues in Central Ohio",
+      category: "Venue Guide",
+      readTime: "4 min read",
+      image: "/images/greenhouse-wedding.jpg",
+      excerpt: "From Franklin Park Conservatory to Jorgensen Farms, discover the premier Central Ohio venues that welcome pets with open arms."
+    },
+    {
+      id: 2,
+      title: "How to Train Your Dog to Walk the Aisle Like a Pro",
+      category: "Aisle Training",
+      readTime: "3 min read",
+      image: "/images/aisle-escort.jpg",
+      excerpt: "Desensitization, practice runs, and how positive reinforcement prevents aisle jumping or distraction during your vows."
+    },
+    {
+      id: 3,
+      title: "Photo Session Secrets: Squeakers, High-Value Treats & Eye Contact",
+      category: "Photo Tips",
+      readTime: "5 min read",
+      image: "/images/wedding-photo-assistant.jpg",
+      excerpt: "The exact behind-the-lens techniques our attendants use to capture joyful, alert portrait smiles with your wedding photographer."
+    },
+    {
+      id: 4,
+      title: "Post-Ceremony Tuck-In: Why Chauffeured Transport is Essential",
+      category: "Wedding Logistics",
+      readTime: "3 min read",
+      image: "/images/safe-ride-home.jpg",
+      excerpt: "Why asking a parent or groomsman to drive your dog home during cocktail hour ruins the party—and how our pet taxi solves it."
+    }
   ],
   faqs: [
     {

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { X, Plus, Loader2, Check } from './AdminIcons';
 import { quotesApi } from '../../services/api';
 
@@ -72,13 +72,13 @@ export default function NewOrderModal({ isOpen, onClose, onCreated }) {
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div 
-        className="bg-white dark:bg-[#262220] rounded-3xl max-w-lg w-full border-2 border-[#EFE6DD] dark:border-[#3D3733] shadow-2xl overflow-hidden my-8"
+        className="bg-white dark:bg-[#262220] rounded-3xl max-w-lg w-full border-2 border-[#E2EAE4] dark:border-[#3D3733] shadow-2xl overflow-hidden my-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-[#8E5B47] text-white p-6 flex items-center justify-between">
+        <div className="bg-[#1E3D2F] text-white p-6 flex items-center justify-between">
           <div>
             <h3 className="text-xl font-bold">Add Wedding Booking</h3>
-            <p className="text-xs text-[#F7ECE6] mt-0.5">Manually record a client or bridal inquiry</p>
+            <p className="text-xs text-[#E8F0EA] mt-0.5">Manually record a client or bridal inquiry</p>
           </div>
           <button 
             onClick={onClose}
@@ -201,7 +201,7 @@ export default function NewOrderModal({ isOpen, onClose, onCreated }) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-2.5 rounded-xl bg-[#8E5B47] hover:bg-[#724534] text-white text-xs font-bold transition shadow-sm cursor-pointer"
+              className="px-6 py-2.5 rounded-xl bg-[#1E3D2F] hover:bg-[#152C22] text-white text-xs font-bold transition shadow-sm cursor-pointer"
             >
               {isSubmitting ? 'Saving...' : 'Create Booking'}
             </button>

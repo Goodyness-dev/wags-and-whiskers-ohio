@@ -137,7 +137,7 @@ export default function InboxView({ onOpenFullQuote }) {
         <div className="p-4 border-b border-slate-200/80 space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <MessageSquare className="w-4 h-4 text-[#8E5B47]" />
+              <MessageSquare className="w-4 h-4 text-[#1E3D2F]" />
               <h2 className="font-heading font-black text-sm uppercase tracking-wider text-slate-900">
                 Orders & Messages
               </h2>
@@ -154,7 +154,7 @@ export default function InboxView({ onOpenFullQuote }) {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search customer, car, or #ID..."
-              className="w-full bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 outline-none transition"
+              className="w-full bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 outline-none transition"
             />
           </div>
 
@@ -166,7 +166,7 @@ export default function InboxView({ onOpenFullQuote }) {
                 onClick={() => setStatusFilter(f)}
                 className={`px-2.5 py-1 rounded-lg font-bold transition capitalize ${
                   statusFilter === f
-                    ? 'bg-[#8E5B47] text-white shadow-xs shadow-[#8E5B47]/20'
+                    ? 'bg-[#1E3D2F] text-white shadow-xs shadow-[#1E3D2F]/20'
                     : 'bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200/70 border border-slate-200/60'
                 }`}
               >
@@ -180,7 +180,7 @@ export default function InboxView({ onOpenFullQuote }) {
         <div className="flex-1 overflow-y-auto divide-y divide-slate-100">
           {isLoadingThreads ? (
             <div className="p-8 text-center text-slate-400 text-xs flex flex-col items-center space-y-2">
-              <Loader2 className="w-5 h-5 animate-spin text-[#8E5B47]" />
+              <Loader2 className="w-5 h-5 animate-spin text-[#1E3D2F]" />
               <span>Loading messages...</span>
             </div>
           ) : filteredThreads.length === 0 ? (
@@ -211,7 +211,7 @@ export default function InboxView({ onOpenFullQuote }) {
                   {/* Initials Avatar */}
                   <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 ${
                     isSelected
-                      ? 'bg-[#8E5B47] text-white shadow-sm shadow-red-600/30'
+                      ? 'bg-[#1E3D2F] text-white shadow-sm shadow-red-600/30'
                       : 'bg-slate-100 text-slate-700 border border-slate-200'
                   }`}>
                     {initials}
@@ -279,14 +279,14 @@ export default function InboxView({ onOpenFullQuote }) {
                 <h3 className="font-heading font-black text-base sm:text-lg text-slate-900">
                   {selectedThread.name}
                 </h3>
-                <span className="font-mono text-xs font-bold text-[#8E5B47] bg-red-50 px-2 py-0.5 rounded-md border border-red-200">
+                <span className="font-mono text-xs font-bold text-[#1E3D2F] bg-red-50 px-2 py-0.5 rounded-md border border-red-200">
                   #{selectedThread.id}
                 </span>
               </div>
               <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 mt-1">
                 <span className="font-medium text-slate-700">{selectedThread.make} ({selectedThread.modelAndYear})</span>
                 <span>â€¢</span>
-                <a href={`tel:${selectedThread.phone?.replace(/[^0-9]/g, '')}`} className="text-[#8E5B47] hover:underline flex items-center space-x-1">
+                <a href={`tel:${selectedThread.phone?.replace(/[^0-9]/g, '')}`} className="text-[#1E3D2F] hover:underline flex items-center space-x-1">
                   <Phone className="w-3 h-3" />
                   <span>{selectedThread.phone || 'No phone'}</span>
                 </a>
@@ -312,7 +312,7 @@ export default function InboxView({ onOpenFullQuote }) {
               {onOpenFullQuote && (
                 <button
                   onClick={() => onOpenFullQuote(selectedThread)}
-                  className="py-2 px-3.5 rounded-xl bg-[#8E5B47] hover:bg-[#724534] text-white font-bold text-xs transition shadow-xs shadow-[#8E5B47]/20"
+                  className="py-2 px-3.5 rounded-xl bg-[#1E3D2F] hover:bg-[#152C22] text-white font-bold text-xs transition shadow-xs shadow-[#1E3D2F]/20"
                 >
                   Quote Studio
                 </button>
@@ -326,7 +326,7 @@ export default function InboxView({ onOpenFullQuote }) {
             <div className="p-4 rounded-2xl bg-white border border-slate-200/80 text-xs text-slate-700 space-y-2.5 shadow-xs">
               <div className="flex items-center justify-between font-bold text-slate-900 border-b border-slate-100 pb-2">
                 <div className="flex items-center space-x-2">
-                  <Wrench className="w-4 h-4 text-[#8E5B47]" />
+                  <Wrench className="w-4 h-4 text-[#1E3D2F]" />
                   <span>Customer Request Details</span>
                 </div>
                 <span className="text-[11px] text-slate-400 font-normal">
@@ -351,7 +351,7 @@ export default function InboxView({ onOpenFullQuote }) {
 
               <div className="flex items-center gap-2 pt-1">
                 {selectedThread.needsTowing && (
-                  <span className="text-[10px] bg-red-50 text-[#8E5B47] border border-red-200 px-2 py-0.5 rounded-full font-bold flex items-center space-x-1">
+                  <span className="text-[10px] bg-red-50 text-[#1E3D2F] border border-red-200 px-2 py-0.5 rounded-full font-bold flex items-center space-x-1">
                     <Truck className="w-3 h-3" />
                     <span>Towing Needed</span>
                   </span>
@@ -368,7 +368,7 @@ export default function InboxView({ onOpenFullQuote }) {
             {/* Conversation Messages */}
             {isLoadingMessages ? (
               <div className="py-8 text-center text-xs text-slate-400 flex flex-col items-center space-y-2">
-                <Loader2 className="w-5 h-5 animate-spin text-[#8E5B47]" />
+                <Loader2 className="w-5 h-5 animate-spin text-[#1E3D2F]" />
                 <span>Loading messages...</span>
               </div>
             ) : (
@@ -387,12 +387,12 @@ export default function InboxView({ onOpenFullQuote }) {
 
                     <div className={`max-w-lg rounded-2xl p-4 text-xs sm:text-sm leading-relaxed whitespace-pre-wrap ${
                       isAdmin
-                        ? 'bg-[#8E5B47] text-white rounded-tr-xs shadow-md shadow-shop-red/15'
+                        ? 'bg-[#1E3D2F] text-white rounded-tr-xs shadow-md shadow-shop-red/15'
                         : 'bg-white border border-slate-200 text-slate-800 rounded-tl-xs shadow-xs'
                     }`}>
                       {msg.isQuote && (
                         <div className={`inline-flex items-center space-x-1.5 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider mb-2 ${
-                          isAdmin ? 'bg-white/20 text-white' : 'bg-red-50 text-[#8E5B47] border border-red-200'
+                          isAdmin ? 'bg-white/20 text-white' : 'bg-red-50 text-[#1E3D2F] border border-red-200'
                         }`}>
                           <DollarSign className="w-3 h-3" />
                           <span>Official Quote Attached</span>
@@ -415,8 +415,8 @@ export default function InboxView({ onOpenFullQuote }) {
           {/* Reply Composer Bar */}
           <div className="p-4 border-t border-slate-200 bg-white space-y-3">
             {sendError && (
-              <div className="p-2.5 rounded-xl bg-red-50 border border-red-200 text-[#8E5B47] text-xs flex items-center space-x-2">
-                <AlertCircle className="w-4 h-4 text-[#8E5B47] shrink-0" />
+              <div className="p-2.5 rounded-xl bg-red-50 border border-red-200 text-[#1E3D2F] text-xs flex items-center space-x-2">
+                <AlertCircle className="w-4 h-4 text-[#1E3D2F] shrink-0" />
                 <span>{sendError}</span>
               </div>
             )}
@@ -428,7 +428,7 @@ export default function InboxView({ onOpenFullQuote }) {
                   type="checkbox"
                   checked={attachPrice}
                   onChange={(e) => setAttachPrice(e.target.checked)}
-                  className="rounded bg-slate-100 border-slate-300 text-[#8E5B47] focus:ring-red-500"
+                  className="rounded bg-slate-100 border-slate-300 text-[#1E3D2F] focus:ring-red-500"
                 />
                 <span className="font-bold flex items-center space-x-1">
                   <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
@@ -444,7 +444,7 @@ export default function InboxView({ onOpenFullQuote }) {
                     value={quotePrice}
                     onChange={(e) => setQuotePrice(e.target.value.replace(/[^0-9.]/g, ''))}
                     placeholder="e.g. 350.00"
-                    className="w-24 bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1 text-xs text-slate-900 font-mono font-bold outline-none focus:border-[#8E5B47] focus:bg-white"
+                    className="w-24 bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1 text-xs text-slate-900 font-mono font-bold outline-none focus:border-[#1E3D2F] focus:bg-white"
                     autoFocus
                   />
                 </div>
@@ -463,13 +463,13 @@ export default function InboxView({ onOpenFullQuote }) {
                   }
                 }}
                 placeholder={`Reply to ${selectedThread.name}... (Press Ctrl+Enter to send)`}
-                className="flex-1 bg-slate-50 border border-slate-200 focus:border-[#8E5B47] focus:bg-white rounded-2xl p-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none resize-none leading-relaxed transition"
+                className="flex-1 bg-slate-50 border border-slate-200 focus:border-[#1E3D2F] focus:bg-white rounded-2xl p-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none resize-none leading-relaxed transition"
               />
 
               <button
                 type="submit"
                 disabled={isSending || (!replyText.trim() && !quotePrice.trim())}
-                className="py-3 px-5 bg-[#8E5B47] hover:bg-[#724534] disabled:opacity-40 text-white font-bold text-xs sm:text-sm rounded-2xl transition shadow-md shadow-[#8E5B47]/20 flex items-center space-x-2 shrink-0 active:scale-95 cursor-pointer"
+                className="py-3 px-5 bg-[#1E3D2F] hover:bg-[#152C22] disabled:opacity-40 text-white font-bold text-xs sm:text-sm rounded-2xl transition shadow-md shadow-[#1E3D2F]/20 flex items-center space-x-2 shrink-0 active:scale-95 cursor-pointer"
               >
                 {isSending ? (
                   <Loader2 className="w-4 h-4 animate-spin" />

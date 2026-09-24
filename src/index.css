@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -20,14 +20,22 @@
 @layer components {
   /* Tactile Thick & Alive Cards with Wedding Shadows */
   .card-thick {
-    @apply border-2 border-[#EFE6DD] dark:border-[#3D3733] shadow-wedding transition-all duration-300;
+    @apply border border-[#E2EAE4] dark:border-[#1E382D] bg-white dark:bg-[#14251E] shadow-wedding transition-all duration-300;
   }
 
   .card-thick-hover {
-    @apply border-2 border-[#EFE6DD] dark:border-[#3D3733] shadow-wedding hover:border-[#8E5B47] dark:hover:border-[#8E5B47] hover:shadow-wedding-lg hover:-translate-y-1 transition-all duration-300;
+    @apply border border-[#E2EAE4] dark:border-[#1E382D] bg-white dark:bg-[#14251E] shadow-wedding hover:border-[#1E3D2F] dark:hover:border-[#799885] hover:shadow-wedding-lg hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .card-frosted {
+    @apply bg-white/80 dark:bg-[#14251E]/80 backdrop-blur-md border border-white/60 dark:border-white/10 shadow-frosted rounded-2xl transition-all duration-300;
+  }
+
+  .card-botanical {
+    @apply bg-[#F5F7F5] dark:bg-[#14251E] border border-[#E2EAE4] dark:border-[#1E382D] rounded-2xl transition-all duration-300;
   }
 
   .input-calibrated {
-    @apply w-full bg-white dark:bg-[#262220] border-2 border-[#EFE6DD] dark:border-[#3D3733] rounded-2xl px-4 py-3 text-sm text-[#2B2623] dark:text-[#F5EFEB] placeholder-[#736760] focus:outline-none focus:border-[#8E5B47] transition-all;
+    @apply w-full bg-white dark:bg-[#14251E] border-2 border-[#E2EAE4] dark:border-[#1E382D] rounded-2xl px-4 py-3 text-sm text-[#242826] dark:text-[#F5EFEB] placeholder-[#799885]/70 focus:outline-none focus:border-[#1E3D2F] transition-all;
   }
 }

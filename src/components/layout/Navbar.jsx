@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode, onToggleDarkMode }) {
@@ -26,65 +26,70 @@ export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode
   };
 
   const navLinks = [
-    { label: 'Wedding Packages', target: '#services' },
-    { label: 'Meet Lacie', target: '#about' },
-    { label: 'Day-Of Care', target: '#amenities' },
-    { label: 'Bride Reviews', target: '#reviews' },
-    { label: 'Venues & FAQ', target: '#location' },
+    { label: 'Home', target: '#hero' },
+    { label: 'Why Us', target: '#why-us' },
+    { label: 'Packages', target: '#packages' },
+    { label: 'The Experience', target: '#experience' },
+    { label: 'Reviews', target: '#reviews' },
+    { label: 'Journal', target: '#journal' },
+    { label: 'Contact', target: '#contact' },
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF8F5]/90 dark:bg-[#1C1917]/90 backdrop-blur-md border-b border-[#EFE6DD] dark:border-[#3D3733] transition-colors">
-      {/* Top Wedding Promo Banner */}
-      <div className="bg-[#8E5B47] text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
-        <span className="bg-white/20 px-2 py-0.5 rounded-full font-bold text-[10px] uppercase tracking-wider">
-          Ohio Wedding Special
+    <header className="sticky top-0 z-40 bg-[#FAF8F5]/90 dark:bg-[#0D1914]/90 backdrop-blur-md border-b border-[#E2EAE4] dark:border-[#1E382D] transition-colors">
+      {/* Top Botanical Promo Strip */}
+      <div className="bg-[#1E3D2F] text-white text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
+        <span className="bg-white/20 text-[#E8F0EA] px-2 py-0.5 rounded-full font-bold text-[10px] uppercase tracking-wider">
+          Limited Special
         </span>
-        <span>
-          <strong>$50 OFF</strong> Wedding Pet Attendant Services for upcoming dates!
+        <span className="text-sm">
+          <strong>$50 OFF</strong> Wedding Pet Attendant Packages for Central Ohio Brides!
         </span>
         <button
           onClick={() => onOpenWizard('Wedding Attendant', 'Special Promo ($50 OFF)')}
-          className="underline ml-1 font-bold hover:text-[#F7ECE6] transition cursor-pointer"
+          className="underline ml-1 font-bold hover:text-[#C5D8CC] transition cursor-pointer"
         >
-          Reserve Your Date →
+          Check Date →
         </button>
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand Wordmark */}
+        {/* Brand Wordmark with Botanical Leaf/Paw Mark */}
         <button 
           onClick={() => handleNavClick('#hero')} 
           className="flex items-center space-x-3 text-left group cursor-pointer"
         >
-          <div className="w-11 h-11 rounded-2xl bg-[#8E5B47] text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
-            {/* Heart & Pet Paw Monoline SVG */}
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          <div className="w-10 h-10 rounded-full bg-[#1E3D2F] text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+            {/* Elegant Botanical Leaf & Paw Monoline SVG */}
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="1.75" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 01-9-9c0-4.97 4.03-9 9-9 4.97 0 9 4.03 9 9 0 2.12-.74 4.07-1.97 5.61L12 21z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 12c-2.5-1.5-4-4-4-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 15c2.5-1.5 4-4 4-7" />
             </svg>
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <span className="font-extrabold text-[#2B2623] dark:text-[#F5EFEB] text-lg sm:text-xl tracking-tight">
+              <span className="font-serif font-bold text-[#1E3D2F] dark:text-[#E8F0EA] text-xl sm:text-2xl tracking-tight">
                 {BUSINESS_INFO.name}
               </span>
-              <span className="text-[10px] font-bold text-[#8E5B47] bg-[#F7ECE6] dark:bg-[#3D2C24] dark:text-[#E8A58B] px-2 py-0.5 rounded-full uppercase tracking-wider hidden sm:inline-block">
+              <span className="text-[10px] font-bold text-[#1E3D2F] bg-[#E8F0EA] dark:bg-[#1E382D] dark:text-[#A7D1BD] px-2 py-0.5 rounded-full uppercase tracking-wider hidden sm:inline-block">
                 Central Ohio
               </span>
             </div>
-            <span className="text-xs text-[#736760] dark:text-[#A89F99] block font-medium">
+            <span className="text-xs text-[#799885] dark:text-[#8EAFA0] block font-medium">
               Wedding Pet Attendant & Day-Of Care
             </span>
           </div>
         </button>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center space-x-6 text-sm font-semibold text-[#473F3A] dark:text-[#D5CDC6]">
+        <div className="hidden lg:flex items-center space-x-7 text-sm font-medium text-[#242826] dark:text-[#E8F0EA]">
           {navLinks.map((link) => (
             <button
               key={link.label}
               onClick={() => handleNavClick(link.target)}
-              className="hover:text-[#8E5B47] dark:hover:text-[#E8A58B] transition-colors cursor-pointer"
+              className="hover:text-[#1E3D2F] dark:hover:text-[#A7D1BD] transition-colors cursor-pointer"
             >
               {link.label}
             </button>
@@ -96,7 +101,7 @@ export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode
           {/* Dark Mode Toggle */}
           <button
             onClick={onToggleDarkMode}
-            className="p-2.5 rounded-xl border border-[#EFE6DD] dark:border-[#3D3733] text-[#736760] dark:text-[#A89F99] hover:bg-[#F5EFEB] dark:hover:bg-[#262220] transition cursor-pointer"
+            className="p-2.5 rounded-full border border-[#E2EAE4] dark:border-[#1E382D] text-[#799885] dark:text-[#8EAFA0] hover:bg-[#E8F0EA] dark:hover:bg-[#14251E] transition cursor-pointer"
             aria-label="Toggle theme"
           >
             {darkMode ? (
@@ -110,13 +115,13 @@ export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode
             )}
           </button>
 
-          {/* Primary CTA */}
+          {/* Solid Forest Green CTA Pill matching Template */}
           <button
             onClick={() => onOpenWizard()}
-            className="px-5 py-2.5 rounded-xl bg-[#8E5B47] hover:bg-[#724534] text-white font-bold text-sm transition shadow-sm active:scale-95 cursor-pointer flex items-center space-x-2"
+            className="px-6 py-2.5 rounded-full bg-[#1E3D2F] hover:bg-[#152C22] text-white font-medium text-sm transition shadow-sm active:scale-95 cursor-pointer flex items-center space-x-2"
           >
             <span>Check Wedding Date</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </button>
@@ -126,7 +131,7 @@ export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode
         <div className="flex sm:hidden items-center space-x-2">
           <button
             onClick={onToggleDarkMode}
-            className="p-2 rounded-xl border border-[#EFE6DD] dark:border-[#3D3733] text-[#736760] dark:text-[#A89F99]"
+            className="p-2 rounded-full border border-[#E2EAE4] dark:border-[#1E382D] text-[#799885] dark:text-[#8EAFA0]"
             aria-label="Toggle theme"
           >
             {darkMode ? (
@@ -141,7 +146,7 @@ export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl border border-[#EFE6DD] dark:border-[#3D3733] text-[#2B2623] dark:text-[#F5EFEB]"
+            className="p-2.5 rounded-full border border-[#E2EAE4] dark:border-[#1E382D] text-[#242826] dark:text-[#E8F0EA]"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
@@ -159,12 +164,12 @@ export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#EFE6DD] dark:border-[#3D3733] bg-[#FAF8F5] dark:bg-[#1C1917] px-4 pt-4 pb-6 space-y-3">
+        <div className="lg:hidden border-t border-[#E2EAE4] dark:border-[#1E382D] bg-[#FAF8F5] dark:bg-[#0D1914] px-4 pt-4 pb-6 space-y-3">
           {navLinks.map((link) => (
             <button
               key={link.label}
               onClick={() => handleNavClick(link.target)}
-              className="w-full text-left py-2.5 px-3 rounded-xl text-base font-semibold text-[#2B2623] dark:text-[#F5EFEB] hover:bg-[#F5EFEB] dark:hover:bg-[#262220] transition"
+              className="w-full text-left py-2.5 px-3 rounded-xl text-base font-semibold text-[#242826] dark:text-[#E8F0EA] hover:bg-[#E8F0EA] dark:hover:bg-[#14251E] transition"
             >
               {link.label}
             </button>
@@ -175,7 +180,7 @@ export default function Navbar({ onOpenWizard, currentPage, onNavigate, darkMode
                 setMobileMenuOpen(false);
                 onOpenWizard();
               }}
-              className="w-full py-3.5 rounded-xl bg-[#8E5B47] text-white font-bold text-base transition shadow-sm text-center"
+              className="w-full py-3.5 rounded-full bg-[#1E3D2F] text-white font-bold text-base transition shadow-sm text-center"
             >
               Check Wedding Date ($50 OFF)
             </button>
